@@ -1,0 +1,29 @@
+:root {
+  --purple-color: #572ee5;
+  --green-color: #5ed7c6;
+  --trending-bg: #f3f5f8;
+  --icons-color: #cdd6e0;
+  --background-color: #ffffff;
+  --border-color: #572ee5;
+  --text: #000000;
+  --link-active: #9cafc3;
+  --line: rgba(255, 255, 255, 0.5);
+  --logo-desktop: url("/images/logo-desktop.svg");
+  --logo-mobile: url("/images/logo-mobile.svg");
+  --color:#ffffff;
+}
+:root[data-theme="dark"] {
+  /*--purple-color: #818288;*/
+  --purple-color: #000000;
+  --green-color: #50e3c2;
+  --trending-bg: #222326;
+  --icons-color: #cdd6e0;
+  --background-color: #37383c;
+  --border-color: #000000;
+  --text: #ffffff;
+  --link-active: #9cafc3;
+  --logo-desktop: url("/images/Logo-modo-noc.svg");
+  --logo-mobile: url("/images/logo-mobile-modo-noct.svg");
+  --color:#ffffff;
+  --line:  rgba(255, 255, 255, 0.5);
+}
