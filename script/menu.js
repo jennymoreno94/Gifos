@@ -44,27 +44,22 @@ const data = [{
 
 let search = document.getElementById("search");
 search.addEventListener("input", (e) => {
-
-    let FilterData = [];
-    debugger;
-    if (e.target.value) {
-        if (data.length > 0) {
-            FilterData = FilterData.filter((data) => {
-                debugger;
-                data.name.includes(e.target.name)
-            });
-            FilterData.map((match) => `<li>${match.name}</li>`)
-        }
-    }
-
-    console.log(FilterData)
-    showSearchArray(FilterData)
+            const suggestionsList = document.getElementById(`suggestions-list`);
+            if (e.target.value) {
+                let FilterData = [];
+                if (data.length > 0) {
+                    FilterData = data.filter((da) => da.name.includes(e.target.value));
+                    const searchAutocomplete =
+                        `<ul>
+                            ${FilterData.map(item => `
+                            <li class="option-list"><i class="fa fa-search"></i>${item.name}</li>
+                            `).join('')}
+                        </ul>`;  
+                suggestionsList.innerHTML = FilterData.length !== 0 ? searchAutocomplete : ''           
+            }     
+            } else {
+                suggestionsList.innerHTML = ''
+            }
 })
-
-function showSearchArray(data) {
-    const html = data
-    document.querySelector('ul').innerHTML = html
-}
-
 
 /*BUSQUEDAs*/
