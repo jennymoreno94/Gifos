@@ -178,7 +178,7 @@ nav a {
     font-family: "Roboto", sans-serif;
     font-size: 16px;
     background: #ffffff;
-    border: 1px solid #572ee5;
+    border: 1px solid var(--primary-color);
     color: #000000;
     text-align: left;
     border-radius: 2em;
@@ -215,6 +215,42 @@ nav a {
 
 #search:valid {
     background-image: none;
+}
+
+#search {
+    background-image: none;
+    border-bottom-right-radius: 2em;
+    border-bottom-left-radius: 2em;
+}
+
+.search-data {
+    background-image: none;
+    border-bottom-right-radius: 0em;
+    border-bottom-left-radius: 0em;
+}
+
+
+/*BUSQUEDA*/
+
+ul {
+    width: 80%;
+    background-position: 95% 60%;
+    border: 1px solid var(--primary-color);
+    border-bottom-right-radius: 2em;
+    border-bottom-left-radius: 2em;
+    padding-bottom: 2em;
+    cursor: pointer;
+}
+
+.list {
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.fa-search {
+    color: #bbc8d6;
+    width: 1.3em;
+    height: 1.3em;
 }
 
 
