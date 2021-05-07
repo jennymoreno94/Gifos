@@ -9,8 +9,8 @@
   --text: #000000;
   --link-active: #9cafc3;
   --line: rgba(255, 255, 255, 0.5);
-  --logo-desktop: url("/images/logo-desktop.svg");
-  --logo-mobile: url("/images/logo-mobile.svg");
+  --logo-desktop: url("../images/logo-desktop.svg");
+  --logo-mobile: url("../images/logo-mobile.svg");
   --logo-background-image: url("../images/icon-search.svg");
   --logo-close-search: url("../images/close.svg");
   --color:#000000;
@@ -29,8 +29,8 @@
   --border-color: #000000;
   --text: #ffffff;
   --link-active: #9cafc3;
-  --logo-desktop: url("/images/Logo-modo-noc.svg");
-  --logo-mobile: url("/images/logo-mobile-modo-noct.svg");
+  --logo-desktop: url("../images/Logo-modo-noc.svg");
+  --logo-mobile: url("../images/logo-mobile-modo-noct.svg");
   --logo-background-image: url("../images/icon-search-mod-noc.svg");
   --logo-close-search: url("../images/close-modo-noct.svg");
   --color:#ffffff;
