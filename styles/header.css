@@ -229,7 +229,7 @@ h1::after {
     border-radius: 2em;
     width: 70%;
     height: 2.5em;
-    margin: 0 auto;
+    margin:auto;
     background-position: 95% 60%;
     padding-left: 2.5em;
     font-weight: 400;
@@ -273,6 +273,7 @@ h1::after {
 }
 
 .option-list {
+    color:var(--color);
     margin-left: 1rem;
     margin-top: 1rem;
 }
