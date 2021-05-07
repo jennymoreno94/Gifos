@@ -1,6 +1,6 @@
 /*HEADER*/
 
-/*const theme = document.querySelector('#mode')
+const theme = document.querySelector('#mode')
 theme.addEventListener("click", () => {
     const dark = document.documentElement.getAttribute('data-theme')
     if (dark === null) {
@@ -14,9 +14,10 @@ theme.addEventListener("click", () => {
 })
 
 function Menu() {
-    var element = document.body;
+    var element = document.querySelector("#header");
     element.classList.toggle("visible_menu");
-}*/
+}
+
 /*HEADER*/
 
 /*BUSQUEDA*/
@@ -50,9 +51,9 @@ search.addEventListener("input", (e) => {
         if (data.length > 0) {
             FilterData = data.filter((da) => da.name.includes(e.target.value));
             const searchAutocomplete =
-                `<ul>
+                `<ul class="list">
                     ${FilterData.map(item => `
-                    <li class="list"><i class="fa fa-search"></i>${item.name}</li>
+                    <li class="option-list"><i class="fa fa-search"></i>${item.name}</li>
                     `).join('')}
                 </ul>`;
 
@@ -72,8 +73,9 @@ search.addEventListener("input", (e) => {
         suggestionsList.innerHTML = ''
     }
 
-    const optionList = document.querySelectorAll(".list");
+    const optionList = document.querySelectorAll(".option-list");
     optionList.forEach(li => li.addEventListener("click", event => {
+        debugger;
         suggestionsList.innerHTML = ''
         search.style.borderBottomRightRadius = '2em'
         search.style.borderBottomLeftRadius = '2em'

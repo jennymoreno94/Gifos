@@ -84,7 +84,7 @@ nav {
 }
 
 .visible_menu {
-    position: fixed;
+    position: absolute;
 }
 
 .visible_menu nav {
@@ -124,6 +124,10 @@ nav a {
 .top-line {
     width: 100%;
     border-top: 5px solid var(--border-color);
+}
+.mimenu {
+    width:100% ;
+
 }
 
 @media screen and (min-width: 1220px) {
@@ -194,7 +198,7 @@ nav a {
 h1{
     font-family: "Montserrat", sans-serif;
     font-size: 25px;
-    color: #572ee5;
+    color:var(--titleColor);
     text-align: center;
     line-height: 33px;
     font-weight: 600;
@@ -218,9 +222,9 @@ h1::after {
 #search {
     font-family: "Roboto", sans-serif;
     font-size: 16px;
-    background: #ffffff;
-    border: 1px solid var(--primary-color);
-    color: #000000;
+    background-color:var(--inputColor);
+    border: 1px solid var(--borderSearch);
+    color: var(--color);;
     text-align: left;
     border-radius: 2em;
     width: 70%;
@@ -229,7 +233,7 @@ h1::after {
     background-position: 95% 60%;
     padding-left: 2.5em;
     font-weight: 400;
-    background-image: url("../images/icon-search.svg");
+    background-image: var(--logo-background-image);
     background-repeat: no-repeat;
     text-indent: 20px;
 }
@@ -241,40 +245,34 @@ h1::after {
     height: 20px;
     width: 20px;
     border-radius: 10px;
-    content: url("../images/close.svg");
+    content: var(--logo-close-search);
+    cursor:pointer
 }
 
 #search:active {
     outline: none;
-    background-image: url("../images/icon-search.svg");
+    background-image: var(--logo-background-image);
 }
 
 #search:focus {
     outline: none;
-    background-image: url("../images/icon-search.svg");
+    background-image: var(--logo-background-image);
 }
 
 #search:valid {
     background-image: none;
 }
-
-#search {
-    background-image: none;
-    border-bottom-right-radius: 2em;
-    border-bottom-left-radius: 2em;
-}
-
-  
-ul {
+ 
+.list {
     background-position: 95% 60%;
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--borderSearch);
     border-bottom-right-radius: 2em;
     border-bottom-left-radius: 2em;
     padding-bottom: 2em;
     cursor: pointer;
 }
 
-.list {
+.option-list {
     margin-left: 1rem;
     margin-top: 1rem;
 }
