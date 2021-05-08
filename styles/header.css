@@ -97,7 +97,7 @@ header {
     margin: 24px;
     font-family: "Montserrat", sans-serif;
     text-decoration: none;
-    color: var(--color);
+    color: var(--menuColor);
     font-size: 1em;
     text-decoration: none;
     text-align: center;
@@ -152,6 +152,9 @@ header {
         visibility: visible;
         opacity: 1;
         padding: 0px;
+    }
+    #menu a {
+        color: var(--titleColor);
     }
     #menu ul li {
         padding: 5px 10px;

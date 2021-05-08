@@ -17,6 +17,7 @@
   --inputColor: #ffffff;
   --titleColor:#572ee5;
   --borderSearch : #572ee5;
+  --menuColor:#ffffff;
 }
 :root[data-theme="dark"] {
   /*--purple-color: #818288;*/
@@ -38,4 +39,5 @@
   --inputColor: #37383c;
   --titleColor:#ffffff;
   --borderSearch : #ffffff;
+  --menuColor:#ffffff;
 }
