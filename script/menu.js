@@ -83,4 +83,21 @@ search.addEventListener("input", (e) => {
 
 })
 
+const navSearch = document.getElementById('nav-search');
+const shadow = document.getElementById('header');
+document.addEventListener("scroll", ()=> {
+    let scroll = window.scrollY
+    console.log(scroll)
+
+    if (scroll > 20) {
+        navSearch.style.visibility = "visible"
+        shadow.classList.add('shadow');
+    }
+    else {
+        navSearch.style.visibility = "hidden"
+        shadow.classList.remove('shadow');
+    }
+
+})
+
 /*BUSQUEDAs*/
