@@ -75,7 +75,6 @@ search.addEventListener("input", (e) => {
 
     const optionList = document.querySelectorAll(".option-list");
     optionList.forEach(li => li.addEventListener("click", event => {
-        debugger;
         suggestionsList.innerHTML = ''
         search.style.borderBottomRightRadius = '2em'
         search.style.borderBottomLeftRadius = '2em'
