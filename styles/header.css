@@ -109,6 +109,7 @@ header {
     display: block;
 }
 
+
 .line {
     width: 65px;
     border-top: 1px solid var(--line);
@@ -188,7 +189,6 @@ header {
 }
 
 
-
 @media screen and (min-width: 1220px) {
     #menu a.title-mobile{
         display: none;
@@ -197,7 +197,6 @@ header {
     #menu a.title-desk{
         display: block;
     }
-
     .logo {
         width: 75px;
         height: auto;
