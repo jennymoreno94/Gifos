@@ -200,7 +200,7 @@ header {
     .logo {
         width: 75px;
         height: auto;
-        margin-top: 20px;
+        margin-top: 10px;
         margin-left: 119px;
         background-image: var(--logo-desktop);
     }
