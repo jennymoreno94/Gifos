@@ -101,6 +101,14 @@ header {
     text-align: center;
 }
 
+#menu a.title-desk{
+    display: none;
+}
+
+#menu a.title-mobile{
+    display: block;
+}
+
 .line {
     width: 65px;
     border-top: 1px solid var(--line);
@@ -136,9 +144,60 @@ header {
 
 .nav-search {
     visibility: hidden;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    background-color:var(--inputColor);
+    border: 1px solid var(--borderSearch);
+    color: var(--color);;
+    text-align: left;
+    border-radius: 2em;
+    width: 25%;
+    height: 2.5em;
+    margin:auto;
+    background-position: 95% 60%;
+    padding-left: 2.5em;
+    font-weight: 400;
+    background-image: var(--logo-background-image);
+    background-repeat: no-repeat;
+    text-indent: 20px;
 }
 
+.nav-search::-webkit-search-cancel-button {
+    position: relative;
+    right: 20px;
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    content: var(--logo-close-search);
+    cursor:pointer
+}
+
+.nav-search:active {
+    outline: none;
+    background-image: var(--logo-background-image);
+}
+
+.nav-search:focus {
+    outline: none;
+    background-image: var(--logo-background-image);
+}
+
+.nav-search:valid {
+    background-image: none;
+}
+
+
+
 @media screen and (min-width: 1220px) {
+    #menu a.title-mobile{
+        display: none;
+    }
+    
+    #menu a.title-desk{
+        display: block;
+    }
+
     .logo {
         width: 75px;
         height: auto;
@@ -163,15 +222,17 @@ header {
     }
     #menu a {
         color: var(--titleColor);
+        margin: 0px;
     }
     #menu ul li {
         padding: 5px 10px;
         display: inline-block;
     }
+  
     li a {
         padding: 5px 10px;
-        color: var(--purple-color);
         text-transform: uppercase;
+        
     }
     li a:active {
         color: var(--link-active);
@@ -194,6 +255,13 @@ header {
         background: white;
         box-shadow: 0 2px 4px 1px rgba(156, 175, 195, 0.55);
       }
+
+    .create-gif {
+        border: 1px solid var(--titleColor);
+        border-radius: 100%;
+        text-align: center;
+        margin: 1rem;
+    }
 
 }
 

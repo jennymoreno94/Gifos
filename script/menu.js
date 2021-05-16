@@ -98,4 +98,10 @@ document.addEventListener("scroll", ()=> {
 
 })
 
+navSearch.addEventListener("keyup",function (e) {
+    if (e.key === 'Enter') {
+        alert(e.key)
+    }
+
+})
 /*BUSQUEDAs*/
