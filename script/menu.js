@@ -108,3 +108,22 @@ navSearch.addEventListener("keyup",function (e) {
 
 })
 /*BUSQUEDAs*/
+
+/*TRENDING*/
+getTrening();
+
+function getTrening() {
+    const dataTrending = ["big head", "share", "washington wizards", "hide", "whats up"];
+    let trendingTopics = document.querySelector(".trending-content");
+    dataTrending.forEach((element) => {
+        trendingTopics.innerHTML += `<span class="trending-topic">${element}, </span>`         
+    })
+    const trendingTopic = document.querySelectorAll(".trending-topic");
+    trendingTopic.forEach(span => span.addEventListener("click", event => {
+        alert(event.currentTarget.textContent)
+    })) 
+}
+    
+ 
+
+/*TRENDING*/

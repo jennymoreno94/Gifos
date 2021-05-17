@@ -147,6 +147,26 @@ header {
     display: none;
 }
 
+/*TRENDING*/
+.trending {
+    padding-top: 1rem;
+    padding-bottom: 1%;
+    margin: 0 auto;
+
+}
+
+.trending-content{
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    text-transform: capitalize;
+    line-height: 2.5rem;
+    color: var(--titleColor);
+}
+
+.trending-topic {
+    cursor: pointer;
+}
+
 @media screen and (min-width: 1220px) {
     #menu a.title-mobile{
         display: none;
@@ -249,9 +269,6 @@ header {
     .nav-search:valid {
         background-image: none;
     }
-    
-
-
 
     .nav-search {
         visibility: hidden;
@@ -291,7 +308,7 @@ header {
     margin: 0 auto;
 }
 
-h1{
+h1,h2{
     font-family: "Montserrat", sans-serif;
     font-size: 25px;
     color:var(--titleColor);
@@ -299,7 +316,7 @@ h1{
     line-height: 33px;
     font-weight: 600;
     letter-spacing: 0;
-  }
+}
   
 h1::after {
    content: " GIFOS";
