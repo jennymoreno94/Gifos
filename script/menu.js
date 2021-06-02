@@ -138,7 +138,8 @@ function getResultSearch() {
             <img src=${element.images.fixed_height_downsampled.url}></img>
             <div class="card">
               <div class="group-icons">
-                <button onClick="addFavoriteGif(${index})" class="option-button heart-icon"></button>
+                <button onClick="addFavoriteGif(${index})" class="option-button"><i id="add-${index}" class="far fa-heart"></i>
+                </button>
                 <button class="option-button download-icon"></button>
                 <button class="option-button max-icon"></button>
               </div>
@@ -154,8 +155,13 @@ function getResultSearch() {
 
 
 window.addFavoriteGif = function (index) {
-  console.log(index)
-  console.log(datagif[index])
+
+  let heart = document.getElementById(`add-${index}`)
+  if(heart.className=="far fa-heart"){
+    heart.className = "fas fa-heart";
+  }else{
+    heart.className = "far fa-heart";
+  }
   addLocalStorage("favorites",datagif[index])
 }
 

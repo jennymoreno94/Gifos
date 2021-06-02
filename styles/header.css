@@ -2,6 +2,7 @@
 @import "../images/icon-download.svg";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -228,8 +229,14 @@ header {
     background: url("../images/icon-max-normal.svg") no-repeat;
 }
 
-.heart-icon {
-    background: url("../images/icon-fav-hover.svg") no-repeat;
+.far{
+    color: #572EE5;
+    font-size: 20px;
+}
+
+.fas {
+color: #572EE5;
+font-size: 20px;
 }
 
 .download-icon {
