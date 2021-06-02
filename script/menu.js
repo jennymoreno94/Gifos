@@ -140,7 +140,7 @@ function getResultSearch() {
               <div class="group-icons">
                 <button onClick="addFavoriteGif(${index})" class="option-button"><i id="add-${index}" class="far fa-heart"></i>
                 </button>
-                <button class="option-button download-icon"></button>
+                <button onClick="downLoadGif(${index})" class="option-button download-icon"></button>
                 <button class="option-button max-icon"></button>
               </div>
               <div class="group-text">
@@ -163,6 +163,11 @@ window.addFavoriteGif = function (index) {
     heart.className = "far fa-heart";
   }
   addLocalStorage("favorites",datagif[index])
+}
+
+window.downLoadGif = async function (index) {
+  let blob = await fetch(datagif[index].images.downsized.url).then(img => img.blob());
+  invokeSaveAsDialog(blob, datagif[index].slug + ".gif");
 }
 
 function addLocalStorage(name,gif) {
