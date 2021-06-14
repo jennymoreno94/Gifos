@@ -133,8 +133,7 @@ header {
     border-top: 5px solid var(--border-color);
 }
 .mimenu {
-    width:100% ;
-
+    width:100%;
 }
 
 .content-menu {
@@ -154,7 +153,6 @@ header {
     padding-top: 1rem;
     padding-bottom: 1%;
     margin: 0 auto;
-
 }
 
 .trending-content{
@@ -322,6 +320,31 @@ font-size: 20px;
     z-index: 1;
 }
 
+.button-view{
+    border: 1px solid var(--titleColor);
+    color: var(--titleColor);
+    background: var(--buttonColor);
+    border-radius: 2rem;
+    text-align: center;
+    margin: 1rem;
+    width: 30%;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    line-height: 3rem;
+    text-transform: uppercase;
+}
+
+.button-view:hover{
+    background-color: var(--buttonColorHover);
+    color: var(--textButtonHover);
+}
+
+
+.container-results {
+    text-align: center;
+}
+
 @media screen and (min-width: 1220px) {
     #menu a.title-mobile{
         display: none;
@@ -455,8 +478,10 @@ font-size: 20px;
         width: 30%;
     }  
 
+    .button-view{
+        width: 20%;
+    }
 }
-
 
 /*BUSQUEDA*/
 

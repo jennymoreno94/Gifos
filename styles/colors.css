@@ -19,7 +19,10 @@
   --borderSearch : #572ee5;
   --menuColor:#ffffff;
   --backgroundModal: rgba(255,255,255,0.9);
-  --close-icon : url("../images/close.svg")
+  --close-icon : url("../images/close.svg");
+  --buttonColor:#ffffff;
+  --buttonColorHover:#572ee5;
+  --textButtonHover:#ffffff;
 }
 :root[data-theme="dark"] {
   /*--purple-color: #818288;*/
@@ -43,5 +46,8 @@
   --borderSearch : #ffffff;
   --menuColor:#ffffff;
   --backgroundModal: rgba(10, 10, 10, 0.9);
-  --close-icon : url("../images/close-modo-noct.svg")
+  --close-icon : url("../images/close-modo-noct.svg");
+  --buttonColor:#37383c;
+  --buttonColorHover:#ffffff;
+  --textButtonHover:#000000;
 }

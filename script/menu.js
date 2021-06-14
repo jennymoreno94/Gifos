@@ -57,10 +57,10 @@ search.addEventListener("input", (e) => {
       FilterData = data.filter((da) => da.name.includes(e.target.value));
       const searchAutocomplete =
         `<ul class="list">
-                    ${FilterData.map(item => `
-                    <li class="option-list"><i class="fa fa-search"></i>${item.name}</li>
-                    `).join('')}
-                </ul>`;
+            ${FilterData.map(item => `
+              <li class="option-list"><i class="fa fa-search"></i>${item.name}</li>
+            `).join('')}
+        </ul>`;
 
       if (FilterData.length !== 0) {
         suggestionsList.innerHTML = searchAutocomplete
