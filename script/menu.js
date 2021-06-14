@@ -156,8 +156,6 @@ function getResultSearch() {
 
 
 window.addFavoriteGif = function (index) {
-  debugger;
-  let heartmodal = document.getElementById(`add-modal-${index}`)
   let heart = document.getElementById(`add-${index}`)
   if(heart.className=="far fa-heart"){
     heart.className = "fas fa-heart";
@@ -218,7 +216,6 @@ function addMaxGif(gif,index) {
 
 
 function addLocalStorage(name,gif) {
-  debugger;
   let data = localStorage.getItem(name);
   data = data ? JSON.parse(data) : [];
   data.push(gif)
