@@ -22,6 +22,7 @@ function Menu() {
   element.classList.toggle("visible_menu");
 }
 
+window.Menu = Menu;
 /*HEADER*/
 
 /*BUSQUEDA*/
@@ -133,29 +134,30 @@ getResultSearch();
 function getResultSearch() {
   let imagesSearch = document.querySelector(".images-search");
   datagif.forEach((element,index) => {
-    imagesSearch.innerHTML +=
-      `<div class="image-content">
-            <img src=${element.images.fixed_height_downsampled.url}></img>
+    imagesSearch.innerHTML += 
+    ` <div class="image-content">
+          <img src=${element.images.fixed_height_downsampled.url}></img>
             <div class="card">
               <div class="group-icons">
                 <button onClick="addFavoriteGif(${index})" class="option-button"><i id="add-${index}" class="far fa-heart"></i>
                 </button>
                 <button onClick="downLoadGif(${index})" class="option-button download-icon"></button>
-                <button class="option-button max-icon"></button>
-              </div>
-              <div class="group-text">
-               <h4 class="user-name">${element.username}</h4>
-               <h4>${element.title}</h4>
-              </div>
-            </div>
-        </div>`
+                <button onClick="maxgif(${index})" class="option-button max-icon"></button>
+                </div>
+          <div class="group-text">
+          <h4 class="user-name">${element.username}</h4>
+          <h4>${element.title}</h4>
+          </div>
+        </div> 
+      `
   })
 
 }
 
 
 window.addFavoriteGif = function (index) {
-
+  debugger;
+  let heartmodal = document.getElementById(`add-modal-${index}`)
   let heart = document.getElementById(`add-${index}`)
   if(heart.className=="far fa-heart"){
     heart.className = "fas fa-heart";
@@ -165,10 +167,55 @@ window.addFavoriteGif = function (index) {
   addLocalStorage("favorites",datagif[index])
 }
 
+window.addFavoriteModalGif = function (index) {
+  let heartmodal = document.getElementById(`add-modal-${index}`)
+  if(heartmodal.className=="far fa-heart"){
+    heartmodal.className = "fas fa-heart";
+  }else{
+    heartmodal.className = "far fa-heart";
+  }
+  addLocalStorage("favorites",datagif[index])
+}
+
+
 window.downLoadGif = async function (index) {
   let blob = await fetch(datagif[index].images.downsized.url).then(img => img.blob());
   invokeSaveAsDialog(blob, datagif[index].slug + ".gif");
 }
+
+window.maxgif = async function (index) {
+  addMaxGif(datagif[index],index)
+}
+
+
+window.closegif = async function (index) {
+  let max = document.getElementById(`gif-${index}`)
+  max.remove("active")
+}
+
+function addMaxGif(gif,index) {
+  let modalDesktop = document.createElement("div");
+  modalDesktop.id = `gif-${index}`
+  modalDesktop.className = "modal-container active"
+  
+    modalDesktop.innerHTML += 
+    `<button class="modal-btn-close option-button close-icon " onclick="closegif(${index})"></button>
+      <img src=${gif.images.fixed_height_downsampled.url}></img>
+      <div class="group-modal">
+        <div class="group-text-modal">
+            <h4 class="user-name">${gif.username}</h4>
+            <h4>${gif.title}</h4>
+        </div>
+        <div class="group-icons-modal">
+          <button onClick="addFavoriteModalGif(${index})" class="option-button"><i id="add-modal-${index}" class="far fa-heart"></i></button>
+          <button onClick="downLoadGif(${index})" class="option-button download-icon"></button>
+        </div>
+        
+      </div>
+      `
+      document.body.appendChild(modalDesktop);
+}
+
 
 function addLocalStorage(name,gif) {
   debugger;
