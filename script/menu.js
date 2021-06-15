@@ -129,9 +129,9 @@ function getTrening() {
 
 /*CARD TRENDING*/
 
-getResultSearch();
+getResultSearch(datagif);
 
-function getResultSearch() {
+function getResultSearch(datagif) {
   let imagesSearch = document.querySelector(".images-search");
   datagif.forEach((element,index) => {
     imagesSearch.innerHTML += 
@@ -221,5 +221,18 @@ function addLocalStorage(name,gif) {
   data.push(gif)
   localStorage.setItem(name,JSON.stringify(data)); 
 }
+
+
+let moreResults = document.getElementById('more-results') 
+moreResults.addEventListener('click',searchMoreResults)
+
+let pag = 12;
+function searchMoreResults() {
+    console.log(pag)
+    let searchResults = datagif;
+    pag = pag + 12;
+    getResultSearch(searchResults)
+}
+
 
 /*CARD TRENDING*/
