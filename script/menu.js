@@ -220,12 +220,12 @@ function getResultSearch(datagif) {
 }*/
 
 
-function addLocalStorage(name, gif) {
+/*function addLocalStorage(name, gif) {
   let data = localStorage.getItem(name);
   data = data ? JSON.parse(data) : [];
   data.push(gif)
   localStorage.setItem(name, JSON.stringify(data));
-}
+}*/
 
 
 let moreResults = document.getElementById('more-results')
