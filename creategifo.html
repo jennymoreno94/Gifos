@@ -7,51 +7,49 @@
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/creategifo.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
 <body>
-    <section>
-        <header id="header">
-            <div class="top-line"></div>
-            <div class="content-menu">
-                <div class="logo"></div>
-                <a href="#" id="menu_on" onclick="Menu()">
-                    <span class="menu_on_span"></span>
-                    <span class="menu_on_span"></span>
-                    <span class="menu_on_span"></span>
-                </a>
-                <input type="search" id="nav-search" class="nav-search" placeholder="Busca GIFOS y más" required
-                    autocomplete="off" />
-                <nav>
-                    <div id="menu">
-                        <ul>
-                            <li>
-                                <a id="mode" href="#">Modo Nocturno</a>
-                                <span class="line"></span>
-                            </li>
-                            <li>
-                                <a href="favorites.html">Favoritos</a>
-                                <span class="line"></span>
-                            </li>
-                            <li>
-                                <a href="gifos.html">Mis GIFOS</a>
-                                <span class="line"></span>
-                            </li>
+    <header id="header">
+        <div class="top-line"></div>
+        <div class="content-menu">
+            <div class="logo"></div>
+            <a href="#" id="menu_on" onclick="Menu()">
+                <span class="menu_on_span"></span>
+                <span class="menu_on_span"></span>
+                <span class="menu_on_span"></span>
+            </a>
+            <input type="search" id="nav-search" class="nav-search" placeholder="Busca GIFOS y más" required autocomplete="off" />
+            <nav>
+                <div id="menu">
+                    <ul>
+                        <li>
+                            <a id="mode" href="#">Modo Nocturno</a>
+                            <span class="line"></span>
+                        </li>
+                        <li>
+                            <a href="favorites.html">Favoritos</a>
+                            <span class="line"></span>
+                        </li>
+                        <li>
+                            <a href="gifos.html">Mis GIFOS</a>
+                            <span class="line"></span>
+                        </li>
 
-                            <li class="create-gif">
-                                <a class="title-desk" href="creategifo.html">+</a>
-                                <a class="title-mobile" href="creategifo.html">Create GIF</a>
-                                <span class="line"></span>
-                            </li>
-                        </ul>
-                    </div>
+                        <li class="create-gif">
+                            <a class="title-desk" href="creategifo.html">+</a>
+                            <a class="title-mobile" href="creategifo.html">Create GIF</a>
+                            <span class="line"></span>
+                        </li>
+                    </ul>
+                </div>
 
-                </nav>
-            </div>
-        </header>
-        <main>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section>
             <div class="flex">
                 <div class="flex-1 onDesktop film-camara">
 
@@ -78,18 +76,17 @@
                         </div>
                         <div id="video-container" class="new-gifos-welcome-message">
                             <h1 class="main-title">Aquí podrás <br> crear tus propios <span>GIFOS</span></h1>
-                            <p class="new-gifos-welcome-paragraph">¡Crea tu GIFO en sólo 3 pasos!<br>(sólo necesitas una
-                                cámara para grabar un video)</p>
+                            <p class="new-gifos-welcome-paragraph">¡Crea tu GIFO en sólo 3 pasos!<br>(sólo necesitas una cámara para grabar un video)</p>
                         </div>
                     </div>
                     <div class="new-gif-create-controllers">
                         <div class="new-gif-create-steps">
                             <ul class=" new-create-steps">
-                            <li id="step1" class="step">1</li>
-                            <li id="step2" class="step">2</li>
-                            <li id="step3" class="step">3</li>
-                            <li id="time-capture" class="onDesktop capture-time">Repetir Captura</li>
-                            <li id="timer" class="onDesktop capture-time timer"></li>
+                                <li id="step1" class="step">1</li>
+                                <li id="step2" class="step">2</li>
+                                <li id="step3" class="step">3</li>
+                                <li id="time-capture" class="onDesktop capture-time">Repetir Captura</li>
+                                <li id="timer" class="onDesktop capture-time timer"></li>
                             </ul>
 
                         </div>
@@ -105,14 +102,12 @@
                 <div class="flex-1 movie onDesktop">
                     <img src="./images/pelicula.svg" alt="">
                 </div>
-
             </div>
+        </section>
+    </main>
 
-
-        </main>
-    </section>
     <script type="module" src="./script/menu.js"></script>
-    <script type="module" src="script/index.js"></script>
+    <script type="module" src="script/newGif.js"></script>
     <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
 </body>
 

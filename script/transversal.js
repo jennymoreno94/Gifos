@@ -13,7 +13,6 @@ const downLoadGif =  window.downLoadGif = async function (element) {
 }
 
 
-
 export default {
     localStorage,
     downLoadGif

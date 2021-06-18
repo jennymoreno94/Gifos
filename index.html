@@ -9,51 +9,53 @@
     <link rel="stylesheet" href="styles/maxCard.css" />
     <link rel="stylesheet" href="styles/slider.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
 <body>
-    <section>
 
-        <header id="header">
-            <div class="top-line"></div>
-            <div class="content-menu">
-                <div class="logo"></div>
-                <a href="#" id="menu_on" onclick="Menu()">
-                    <span class="menu_on_span"></span>
-                    <span class="menu_on_span"></span>
-                    <span class="menu_on_span"></span>
-                </a>
-                <input type="search" id="nav-search" class="nav-search" placeholder="Busca GIFOS y más" required
-                    autocomplete="off" />
-                <nav>
-                    <div id="menu">
-                        <ul>
-                            <li>
-                                <a id="mode" href="#">Modo Nocturno</a>
-                                <span class="line"></span>
-                            </li>
-                            <li>
-                                <a href="favorites.html">Favoritos</a>
-                                <span class="line"></span>
-                            </li>
-                            <li>
-                                <a href="gifos.html">Mis GIFOS</a>
-                                <span class="line"></span>
-                            </li>
-                            
-                            <li class="create-gif">
-                                <a class="title-desk" href="creategifo.html">+</a>
-                                <a class="title-mobile" href="creategifo.html">Create GIF</a>
-                                <span class="line"></span>
-                            </li>
-                        </ul>
-                    </div>
 
-                </nav>
-            </div>
-        </header>
-        <main>
+    <header id="header">
+        <div class="top-line"></div>
+        <div class="content-menu">
+            <div class="logo"></div>
+            <a href="#" id="menu_on" onclick="Menu()">
+                <span class="menu_on_span"></span>
+                <span class="menu_on_span"></span>
+                <span class="menu_on_span"></span>
+            </a>
+            <input type="search" id="nav-search" class="nav-search" placeholder="Busca GIFOS y más" required
+                autocomplete="off" />
+            <nav>
+                <div id="menu">
+                    <ul>
+                        <li>
+                            <a id="mode" href="#">Modo Nocturno</a>
+                            <span class="line"></span>
+                        </li>
+                        <li>
+                            <a href="favorites.html">Favoritos</a>
+                            <span class="line"></span>
+                        </li>
+                        <li>
+                            <a href="gifos.html">Mis GIFOS</a>
+                            <span class="line"></span>
+                        </li>
+
+                        <li class="create-gif">
+                            <a class="title-desk" href="creategifo.html">+</a>
+                            <a class="title-mobile" href="creategifo.html">Create GIF</a>
+                            <span class="line"></span>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section>
             <div class="container">
                 <div class="imagen">
                     <h1>Inspírate, busca, guarda, y crea los mejores</h1>
@@ -61,23 +63,23 @@
                 </div>
                 <input type="search" id="search" placeholder="Busca GIFOS y más" required autocomplete="off" />
                 <div id="suggestions-list">
-                </div> 
+                </div>
                 <div class="trending">
-                    <h2>Trending</h2> 
+                    <h2>Trending</h2>
                     <p class="trending-content">
                     </p>
                 </div>
                 <div class="container-results">
-                    <h2>Happy</h2> 
-                    <div id="images-search" class="images-search">  
+                    <h2>Happy</h2>
+                    <div id="images-search" class="images-search">
                     </div>
                     <button id="more-results" class="button-view">Ver Mas</button>
                 </div>
                 <div id="carrusel-container" class="carrusel-container">
                 </div>
-           </div> 
-        </main>
-    </section>
+            </div>
+        </section>
+    </main>
     <script type="module" src="./script/menu.js"></script>
     <script type="module" src="script/index.js"></script>
     <script type="module" src="./script/trending.js"></script>
