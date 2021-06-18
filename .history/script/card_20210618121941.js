@@ -3,6 +3,8 @@ import MaxCard from "./maxCard.js";
 var dataComplete;
 
 function Card(datagif, elementId) {
+    debugger;
+    //let imagesSearch = document.querySelector(".images-search");
     datagif.forEach((element, index) => {
         elementId.innerHTML +=
             ` <div class="image-content">
