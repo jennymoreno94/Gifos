@@ -17,9 +17,12 @@ function Slider() {
 
     let sliderContainer = document.getElementById("slider_container")
 
-    datagif.forEach((element, index) => {
+    /*datagif.forEach((element, index) => {
         sliderContainer.innerHTML += Card.Card(element)
-    });
+    });*/
+    Card.DataCard(datagif)
+    debugger;
+    Card.Card(datagif, sliderContainer)
 
     /*datagif.forEach((element, index) => {
       sliderContainer.innerHTML +=

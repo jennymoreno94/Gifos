@@ -2,10 +2,11 @@ import MaxCard from "./maxCard.js";
 
 var dataComplete;
 
-function Card(datagif) {
-    let imagesSearch = document.querySelector(".images-search");
+function Card(datagif, elementId) {
+    debugger;
+    //let imagesSearch = document.querySelector(".images-search");
     datagif.forEach((element, index) => {
-        imagesSearch.innerHTML +=
+        elementId.innerHTML +=
             ` <div class="image-content">
             <img src=${element.images.fixed_height_downsampled.url}></img>
               <div class="card">
@@ -23,45 +24,6 @@ function Card(datagif) {
         `
     })
 }
-/*function Card(element, index) {
-    let elementComplete = JSON.stringify(element)
-    const cardView = ` 
-        <div class="image-content">
-            <img src=${element.images.fixed_height_downsampled.url}></img>
-            <div class="card">
-                <div class="group-icons">
-                <button id="addFavorite-${index}" class="option-button"><i id="add-${element.id}" class="far fa-heart"></i>
-                </button>
-                <button id="downFavorite-${index}" class="option-button download-icon"></button>
-                <button id="maxFavorite-${index}"  class="option-button max-icon"></button>
-                </div>
-            <div class="group-text">
-            <h4 class="user-name">${element.username}</h4>
-            <h4>${element.title}</h4>
-            </div>
-        </div> 
-    `;
-
-    const handlerEventIcons = document.querySelectorAll(".option-button");
-    handlerEventIcons.forEach(btn => {
-        btn.addEventListener("click", function(event) {
-            let index = Number(String(event.currentTarget.id).slice(-2).replace('-', ''))
-            if (event.currentTarget.id == `addFavorite-${index}`) {
-                debugger;
-                addFavoriteGif(miData[index])
-            }
-            if (event.currentTarget.id == `downFavorite-${index}`) {
-                downLoadGif(miData[index])
-            }
-            if (event.currentTarget.id == `maxFavorite-${index}`) {
-                maxgif(miData[index])
-            }
-
-        })
-    })
-
-    return cardView
-}*/
 
 function DataCard(data) {
     dataComplete = data;

@@ -105,8 +105,9 @@ function getTrening() {
 getResultSearch(datagif);
 
 function getResultSearch(datagif) {
+  let imagesSearch = document.querySelector(".images-search");
   Card.DataCard(datagif)
-  Card.Card(datagif) 
+  Card.Card(datagif,imagesSearch) 
 }
 
 let moreResults = document.getElementById('more-results')
