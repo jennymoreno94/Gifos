@@ -63,7 +63,6 @@
     z-index: 1;
 }
 
-
 @media screen and (min-width: 1220px) {
     .modal-container img{
         width: 30%;
@@ -74,8 +73,4 @@
     .group-modal {
         width: 30%;
     }  
-
-
-    
-   
 }
