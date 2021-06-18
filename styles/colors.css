@@ -23,6 +23,10 @@
   --buttonColor:#ffffff;
   --buttonColorHover:#572ee5;
   --textButtonHover:#ffffff;
+
+
+  --gifos-background:#ffffff;
+  --green-gifos:#50E3C2;
 }
 :root[data-theme="dark"] {
   /*--purple-color: #818288;*/
@@ -50,4 +54,8 @@
   --buttonColor:#37383c;
   --buttonColorHover:#ffffff;
   --textButtonHover:#000000;
+
+  --gifos-background:#37383C;
+  --green-gifos:#50E3C2;
+  
 }

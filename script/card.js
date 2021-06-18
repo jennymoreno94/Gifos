@@ -33,7 +33,6 @@ window.addFavoriteGif = function (element) {
 }
 
 window.downLoadGif = async function (element) {
-    debugger;
     let blob = await fetch(element.images.downsized.url).then(img => img.blob());
     invokeSaveAsDialog(blob, element.slug + ".gif");
 }

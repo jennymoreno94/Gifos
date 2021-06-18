@@ -3,7 +3,7 @@ import datagif from '../mocks/dataGif.js'
 import Card from './card.js';
 import Slider from './slider.js';
 
-const theme = document.querySelector('#mode')
+/*const theme = document.querySelector('#mode')
 let mode = document.getElementById("mode");
 theme.addEventListener("click", () => {
   const dark = document.documentElement.getAttribute('data-theme')
@@ -24,7 +24,7 @@ function Menu() {
   element.classList.toggle("visible_menu");
 }
 
-window.Menu = Menu;
+window.Menu = Menu;*/
 /*HEADER*/
 
 /*BUSQUEDA*/
