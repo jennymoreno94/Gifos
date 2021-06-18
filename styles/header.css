@@ -367,26 +367,7 @@ font-size: 20px;
     width: 100%;
 }
 
-.carrousel-button{
-    background: var(--buttonColor);
-    flex: 1;
-    max-width: 5rem;
-    border: 1px solid var(--titleColor);
-    color: var(--titleColor);
-    background: var(--buttonColor);
-    text-align: center;
-    margin: 5rem 1rem;
-    cursor: pointer;
-    font-family: "Montserrat", sans-serif;
-    font-size: 1rem;
-    line-height: 1rem; 
-    padding: 1rem;
-}
 
-.carrousel-button:hover{
-    background-color: var(--buttonColorHover);
-    color: var(--textButtonHover);
-}
 
 .slider-container{
     display: flex;
@@ -396,8 +377,6 @@ font-size: 20px;
 	scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
-    overflow:hidden;
-
 }
 
 .slider-container .image-content  {
@@ -409,6 +388,10 @@ font-size: 20px;
     width: auto;
     height: auto;
     object-fit: cover;
+}
+
+.carrousel-button{
+    visibility: hidden;
 }
 
 @media screen and (min-width: 1220px) {
@@ -546,6 +529,32 @@ font-size: 20px;
 
     .button-view{
         width: 20%;
+    }
+
+    .carrousel-button{
+        background: var(--buttonColor);
+        flex: 1;
+        max-width: 5rem;
+        border: 1px solid var(--titleColor);
+        color: var(--titleColor);
+        background: var(--buttonColor);
+        text-align: center;
+        margin: 5rem 1rem;
+        cursor: pointer;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1rem;
+        line-height: 1rem; 
+        padding: 1rem;
+        visibility: visible;
+    }
+    
+    .carrousel-button:hover{
+        background-color: var(--buttonColorHover);
+        color: var(--textButtonHover);
+    }
+
+    .slider-container{
+        overflow:hidden;
     }
 }
 
