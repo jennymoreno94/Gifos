@@ -1,6 +1,7 @@
 /*HEADER*/
 import datagif from '../mocks/dataGif.js'
 import Card from './card.js';
+import Slider from './slider.js';
 
 const theme = document.querySelector('#mode')
 let mode = document.getElementById("mode");
@@ -240,7 +241,7 @@ function searchMoreResults() {
 }
 
 
-function carrusel() {
+/*function carrusel() {
   let carruselContainer = document.getElementById("carrusel-container")
 
   
@@ -288,11 +289,9 @@ window.toggleLeft = function () {
 window.toggleRight = function () {
   let carrousel =  document.getElementById("slider_container");
   carrousel.scrollBy(300, 0);
-}
+}*/
 
 
+Slider();
 
-
-carrusel();
-
-/*CARD TRENDING*/
+//carrusel();
