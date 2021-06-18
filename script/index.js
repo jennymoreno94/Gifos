@@ -1,31 +1,6 @@
-/*HEADER*/
 import datagif from '../mocks/dataGif.js'
 import Card from './card.js';
 import Slider from './slider.js';
-
-/*const theme = document.querySelector('#mode')
-let mode = document.getElementById("mode");
-theme.addEventListener("click", () => {
-  const dark = document.documentElement.getAttribute('data-theme')
-  if (dark === null) {
-    mode.innerText = "Modo Diurno"
-    document.documentElement.setAttribute('data-theme', 'dark')
-    localStorage.setItem('data-theme', 'dark')
-  } else {
-    mode.innerText = "Modo Nocturno"
-    document.documentElement.removeAttribute('data-theme')
-    localStorage.removeItem('data-theme')
-  }
-
-})
-
-function Menu() {
-  var element = document.querySelector("#header");
-  element.classList.toggle("visible_menu");
-}
-
-window.Menu = Menu;*/
-/*HEADER*/
 
 /*BUSQUEDA*/
 const data = [{
@@ -111,9 +86,8 @@ navSearch.addEventListener("keyup", function (e) {
   }
 
 })
-/*BUSQUEDAs*/
 
-/*TRENDING*/
+
 getTrening();
 
 function getTrening() {
@@ -127,107 +101,16 @@ function getTrening() {
     alert(event.currentTarget.textContent)
   }))
 }
-/*TRENDING*/
-
-/*CARD TRENDING*/
 
 getResultSearch(datagif);
 
 function getResultSearch(datagif) {
   let imagesSearch = document.querySelector(".images-search");
-  /*datagif.forEach((element, index) => {
-    imagesSearch.innerHTML +=
-      ` <div class="image-content">
-          <img src=${element.images.fixed_height_downsampled.url}></img>
-            <div class="card">
-              <div class="group-icons">
-                <button onClick="addFavoriteGif(${index})" class="option-button"><i id="add-${index}" class="far fa-heart"></i>
-                </button>
-                <button onClick="downLoadGif(${index})" class="option-button download-icon"></button>
-                <button onClick="maxgif(${index})" class="option-button max-icon"></button>
-                </div>
-          <div class="group-text">
-          <h4 class="user-name">${element.username}</h4>
-          <h4>${element.title}</h4>
-          </div>
-        </div> 
-      `
-  })*/
-
   datagif.forEach((element, index) => {
     imagesSearch.innerHTML += Card(element) 
   });
 
 }
-
-
-/*window.addFavoriteGif = function (index) {
-  let heart = document.getElementById(`add-${index}`)
-  if (heart.className == "far fa-heart") {
-    heart.className = "fas fa-heart";
-  } else {
-    heart.className = "far fa-heart";
-  }
-  addLocalStorage("favorites", datagif[index])
-}*/
-
-/*window.addFavoriteModalGif = function (index) {
-  let heartmodal = document.getElementById(`add-modal-${index}`)
-  if (heartmodal.className == "far fa-heart") {
-    heartmodal.className = "fas fa-heart";
-  } else {
-    heartmodal.className = "far fa-heart";
-  }
-  addLocalStorage("favorites", datagif[index])
-}*/
-
-
-/*window.downLoadGif = async function (index) {
-  let blob = await fetch(datagif[index].images.downsized.url).then(img => img.blob());
-  invokeSaveAsDialog(blob, datagif[index].slug + ".gif");
-}*/
-
-/*window.maxgif = async function (index) {
-  addMaxGif(datagif[index], index)
-}*/
-
-
-/*window.closegif = async function (index) {
-  let max = document.getElementById(`gif-${index}`)
-  max.remove("active")
-}*/
-
-/*function addMaxGif(gif, index) {
-  let modalDesktop = document.createElement("div");
-  modalDesktop.id = `gif-${index}`
-  modalDesktop.className = "modal-container active"
-
-  modalDesktop.innerHTML +=
-    `<button class="modal-btn-close option-button close-icon " onclick="closegif(${index})"></button>
-      <img src=${gif.images.fixed_height_downsampled.url}></img>
-      <div class="group-modal">
-        <div class="group-text-modal">
-            <h4 class="user-name">${gif.username}</h4>
-            <h4>${gif.title}</h4>
-        </div>
-        <div class="group-icons-modal">
-          <button onClick="addFavoriteModalGif(${index})" class="option-button"><i id="add-modal-${index}" class="far fa-heart"></i></button>
-          <button onClick="downLoadGif(${index})" class="option-button download-icon"></button>
-        </div>
-        
-      </div>
-      `
-  document.body.appendChild(modalDesktop);
-}*/
-
-
-/*function addLocalStorage(name, gif) {
-  let data = localStorage.getItem(name);
-  data = data ? JSON.parse(data) : [];
-  data.push(gif)
-  localStorage.setItem(name, JSON.stringify(data));
-}*/
-
 
 let moreResults = document.getElementById('more-results')
 moreResults.addEventListener('click', searchMoreResults)
@@ -240,58 +123,5 @@ function searchMoreResults() {
   getResultSearch(searchResults)
 }
 
-
-/*function carrusel() {
-  let carruselContainer = document.getElementById("carrusel-container")
-
-  
-  carruselContainer.innerHTML += `
-      <h2 class="trending-title">Trending GIFOS</h2>
-      <p class="trending-description">Mira los últimos </p>
-      <p class="trending-description">GIFOS de nuestra comunidad</p>
-      <div class="carrousel">
-          <button onClick="toggleLeft()"  class="carrousel-button"><i class="fa fa-chevron-left"></i></button>
-          <div id="slider_container" class="slider-container">
-          </div>
-          <button onClick="toggleRight()" class="carrousel-button"><i class="fa fa-chevron-right"></i></button>
-      </div>
-    `;
-    
-    let sliderContainer = document.getElementById("slider_container") 
-
-    datagif.forEach((element, index) => {
-      sliderContainer.innerHTML +=
-        ` <div class="image-content">
-            <img src=${element.images.fixed_height_downsampled.url}></img>
-              <div class="card">
-                <div class="group-icons">
-                  <button onClick="addFavoriteGif(${index})" class="option-button"><i id="add-${index}" class="far fa-heart"></i>
-                  </button>
-                  <button onClick="downLoadGif(${index})" class="option-button download-icon"></button>
-                  <button onClick="maxgif(${index})" class="option-button max-icon"></button>
-                  </div>
-            <div class="group-text">
-            <h4 class="user-name">${element.username}</h4>
-            <h4>${element.title}</h4>
-            </div>
-          </div> 
-        `
-    })
-}
-
-
-window.toggleLeft = function () {
-  let carrousel =  document.getElementById("slider_container");
-  carrousel.scrollBy(-300, 0);
-  
-}
-
-window.toggleRight = function () {
-  let carrousel =  document.getElementById("slider_container");
-  carrousel.scrollBy(300, 0);
-}*/
-
-
 Slider();
 
-//carrusel();
