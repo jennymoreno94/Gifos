@@ -1,5 +1,6 @@
 /*HEADER*/
 import datagif from '../mocks/dataGif.js'
+import Card from './card.js';
 
 const theme = document.querySelector('#mode')
 let mode = document.getElementById("mode");
@@ -133,7 +134,7 @@ getResultSearch(datagif);
 
 function getResultSearch(datagif) {
   let imagesSearch = document.querySelector(".images-search");
-  datagif.forEach((element, index) => {
+  /*datagif.forEach((element, index) => {
     imagesSearch.innerHTML +=
       ` <div class="image-content">
           <img src=${element.images.fixed_height_downsampled.url}></img>
@@ -150,12 +151,16 @@ function getResultSearch(datagif) {
           </div>
         </div> 
       `
-  })
+  })*/
+
+  datagif.forEach((element, index) => {
+    imagesSearch.innerHTML += Card(element) 
+  });
 
 }
 
 
-window.addFavoriteGif = function (index) {
+/*window.addFavoriteGif = function (index) {
   let heart = document.getElementById(`add-${index}`)
   if (heart.className == "far fa-heart") {
     heart.className = "fas fa-heart";
@@ -163,9 +168,9 @@ window.addFavoriteGif = function (index) {
     heart.className = "far fa-heart";
   }
   addLocalStorage("favorites", datagif[index])
-}
+}*/
 
-window.addFavoriteModalGif = function (index) {
+/*window.addFavoriteModalGif = function (index) {
   let heartmodal = document.getElementById(`add-modal-${index}`)
   if (heartmodal.className == "far fa-heart") {
     heartmodal.className = "fas fa-heart";
@@ -173,25 +178,25 @@ window.addFavoriteModalGif = function (index) {
     heartmodal.className = "far fa-heart";
   }
   addLocalStorage("favorites", datagif[index])
-}
+}*/
 
 
-window.downLoadGif = async function (index) {
+/*window.downLoadGif = async function (index) {
   let blob = await fetch(datagif[index].images.downsized.url).then(img => img.blob());
   invokeSaveAsDialog(blob, datagif[index].slug + ".gif");
-}
+}*/
 
-window.maxgif = async function (index) {
+/*window.maxgif = async function (index) {
   addMaxGif(datagif[index], index)
-}
+}*/
 
 
-window.closegif = async function (index) {
+/*window.closegif = async function (index) {
   let max = document.getElementById(`gif-${index}`)
   max.remove("active")
-}
+}*/
 
-function addMaxGif(gif, index) {
+/*function addMaxGif(gif, index) {
   let modalDesktop = document.createElement("div");
   modalDesktop.id = `gif-${index}`
   modalDesktop.className = "modal-container active"
@@ -212,7 +217,7 @@ function addMaxGif(gif, index) {
       </div>
       `
   document.body.appendChild(modalDesktop);
-}
+}*/
 
 
 function addLocalStorage(name, gif) {
