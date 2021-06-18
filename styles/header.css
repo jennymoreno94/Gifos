@@ -345,6 +345,72 @@ font-size: 20px;
     text-align: center;
 }
 
+.carrusel-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color:var(--background-color);
+    width: 100%;
+    flex:3;
+}
+
+.carrousel-description {
+    margin-bottom: 0.5rem;
+    color:var(--text);
+}
+
+.carrousel {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.carrousel-button{
+    background: var(--buttonColor);
+    flex: 1;
+    max-width: 5rem;
+    border: 1px solid var(--titleColor);
+    color: var(--titleColor);
+    background: var(--buttonColor);
+    text-align: center;
+    margin: 5rem 1rem;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    line-height: 1rem; 
+    padding: 1rem;
+}
+
+.carrousel-button:hover{
+    background-color: var(--buttonColorHover);
+    color: var(--textButtonHover);
+}
+
+.slider-container{
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+    overflow-x: scroll;
+	scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    overflow:hidden;
+
+}
+
+.slider-container .image-content  {
+    scroll-snap-align: center;
+    padding-bottom: 5px;
+}
+
+.slider-container .image-content  img {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
 @media screen and (min-width: 1220px) {
     #menu a.title-mobile{
         display: none;
@@ -604,6 +670,7 @@ h1::after {
     width: 1.3em;
     height: 1.3em;
 }
+
 
 
 /*BUSQUEDA*/

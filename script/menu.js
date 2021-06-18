@@ -133,9 +133,9 @@ getResultSearch(datagif);
 
 function getResultSearch(datagif) {
   let imagesSearch = document.querySelector(".images-search");
-  datagif.forEach((element,index) => {
-    imagesSearch.innerHTML += 
-    ` <div class="image-content">
+  datagif.forEach((element, index) => {
+    imagesSearch.innerHTML +=
+      ` <div class="image-content">
           <img src=${element.images.fixed_height_downsampled.url}></img>
             <div class="card">
               <div class="group-icons">
@@ -157,22 +157,22 @@ function getResultSearch(datagif) {
 
 window.addFavoriteGif = function (index) {
   let heart = document.getElementById(`add-${index}`)
-  if(heart.className=="far fa-heart"){
+  if (heart.className == "far fa-heart") {
     heart.className = "fas fa-heart";
-  }else{
+  } else {
     heart.className = "far fa-heart";
   }
-  addLocalStorage("favorites",datagif[index])
+  addLocalStorage("favorites", datagif[index])
 }
 
 window.addFavoriteModalGif = function (index) {
   let heartmodal = document.getElementById(`add-modal-${index}`)
-  if(heartmodal.className=="far fa-heart"){
+  if (heartmodal.className == "far fa-heart") {
     heartmodal.className = "fas fa-heart";
-  }else{
+  } else {
     heartmodal.className = "far fa-heart";
   }
-  addLocalStorage("favorites",datagif[index])
+  addLocalStorage("favorites", datagif[index])
 }
 
 
@@ -182,7 +182,7 @@ window.downLoadGif = async function (index) {
 }
 
 window.maxgif = async function (index) {
-  addMaxGif(datagif[index],index)
+  addMaxGif(datagif[index], index)
 }
 
 
@@ -191,12 +191,12 @@ window.closegif = async function (index) {
   max.remove("active")
 }
 
-function addMaxGif(gif,index) {
+function addMaxGif(gif, index) {
   let modalDesktop = document.createElement("div");
   modalDesktop.id = `gif-${index}`
   modalDesktop.className = "modal-container active"
-  
-    modalDesktop.innerHTML += 
+
+  modalDesktop.innerHTML +=
     `<button class="modal-btn-close option-button close-icon " onclick="closegif(${index})"></button>
       <img src=${gif.images.fixed_height_downsampled.url}></img>
       <div class="group-modal">
@@ -211,28 +211,83 @@ function addMaxGif(gif,index) {
         
       </div>
       `
-      document.body.appendChild(modalDesktop);
+  document.body.appendChild(modalDesktop);
 }
 
 
-function addLocalStorage(name,gif) {
+function addLocalStorage(name, gif) {
   let data = localStorage.getItem(name);
   data = data ? JSON.parse(data) : [];
   data.push(gif)
-  localStorage.setItem(name,JSON.stringify(data)); 
+  localStorage.setItem(name, JSON.stringify(data));
 }
 
 
-let moreResults = document.getElementById('more-results') 
-moreResults.addEventListener('click',searchMoreResults)
+let moreResults = document.getElementById('more-results')
+moreResults.addEventListener('click', searchMoreResults)
 
 let pag = 12;
 function searchMoreResults() {
-    console.log(pag)
-    let searchResults = datagif;
-    pag = pag + 12;
-    getResultSearch(searchResults)
+  console.log(pag)
+  let searchResults = datagif;
+  pag = pag + 12;
+  getResultSearch(searchResults)
 }
 
+
+function carrusel() {
+  let carruselContainer = document.getElementById("carrusel-container")
+
+  
+  carruselContainer.innerHTML += `
+      <h2 class="trending-title">Trending GIFOS</h2>
+      <p class="trending-description">Mira los últimos </p>
+      <p class="trending-description">GIFOS de nuestra comunidad</p>
+      <div class="carrousel">
+          <button onClick="toggleLeft()"  class="carrousel-button"><i class="fa fa-chevron-left"></i></button>
+          <div id="slider_container" class="slider-container">
+          </div>
+          <button onClick="toggleRight()" class="carrousel-button"><i class="fa fa-chevron-right"></i></button>
+      </div>
+    `;
+    
+    let sliderContainer = document.getElementById("slider_container") 
+
+    datagif.forEach((element, index) => {
+      sliderContainer.innerHTML +=
+        ` <div class="image-content">
+            <img src=${element.images.fixed_height_downsampled.url}></img>
+              <div class="card">
+                <div class="group-icons">
+                  <button onClick="addFavoriteGif(${index})" class="option-button"><i id="add-${index}" class="far fa-heart"></i>
+                  </button>
+                  <button onClick="downLoadGif(${index})" class="option-button download-icon"></button>
+                  <button onClick="maxgif(${index})" class="option-button max-icon"></button>
+                  </div>
+            <div class="group-text">
+            <h4 class="user-name">${element.username}</h4>
+            <h4>${element.title}</h4>
+            </div>
+          </div> 
+        `
+    })
+}
+
+
+window.toggleLeft = function () {
+  let carrousel =  document.getElementById("slider_container");
+  carrousel.scrollBy(-300, 0);
+  
+}
+
+window.toggleRight = function () {
+  let carrousel =  document.getElementById("slider_container");
+  carrousel.scrollBy(300, 0);
+}
+
+
+
+
+carrusel();
 
 /*CARD TRENDING*/
