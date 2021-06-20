@@ -4,7 +4,7 @@ Slider();
 
 const favorites = JSON.parse(localStorage.getItem("favorites"))
 let containerResult = document.getElementById("container-results");
-let favoriteEmpty = document.getElementById("favorite-empty");
+let favoriteEmpty = document.getElementById("gifos-empty");
 if (favorites == null) {
     debugger;
     favoriteEmpty.style.visibility = 'visible'
