@@ -1,14 +1,13 @@
-.image-content{
+.image-content {
     display: inline-block;
     position: relative;
     width: 80%;
-    border: 1px solid  black;
     animation-duration: 2s;
     animation-name: fade;
     position: relative;
 }
 
-.image-content  img {
+.image-content img {
     width: 100%;
     height: 100%;
     z-index: 0;
@@ -22,8 +21,9 @@
     height: 100%;
     opacity: 0;
 }
-.card:hover{
-    background: rgb(87, 46, 229,0.6);
+
+.card:hover {
+    background: rgb(87, 46, 229, 0.6);
     opacity: 1;
 }
 
@@ -31,8 +31,9 @@
     display: flex;
     justify-content: flex-end;
     gap: 0.2rem;
-    margin: 0.5rem;   
+    margin: 0.5rem;
 }
+
 .option-button {
     background-position: center;
     background-color: white;
@@ -43,6 +44,7 @@
     opacity: 0.7;
     cursor: pointer;
 }
+
 .option-button:hover {
     opacity: 1;
 }
@@ -54,14 +56,15 @@
 .close-icon {
     background: var(--close-icon) no-repeat;
 }
-.far{
+
+.far {
     color: #572EE5;
     font-size: 20px;
 }
 
 .fas {
-color: #572EE5;
-font-size: 20px;
+    color: #572EE5;
+    font-size: 20px;
 }
 
 .download-icon {
