@@ -25,7 +25,21 @@ const getRadom = () => {
             })
     })
 }
+
+const getAutocomplete = (tag) => {
+    let url = `${api}/search/tags?api_key=${apikey}&q=${tag}`;
+    return new Promise((resolve, reject) => {
+        fetch(url)
+            .then(response => resolve(response.json()))
+            .catch(error => {
+                console.log(`Error petición ${url.getUser}:` + error.message);
+                reject(error)
+            })
+    })
+}
+
 export default {
     getSearch,
-    getRadom
+    getRadom,
+    getAutocomplete
 }
