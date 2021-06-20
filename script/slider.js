@@ -1,4 +1,4 @@
-import datagif from '../mocks/dataGif.js'
+import datagif from '../utils/dataGif.js'
 import Card from './card.js';
 
 function Slider() {

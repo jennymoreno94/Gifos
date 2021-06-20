@@ -9,21 +9,21 @@ function Card(datagif, elementId) {
                 if (element != null) {
                     elementId.innerHTML +=
                         ` <div class="image-content">
-            <img src=${element.images.fixed_height_downsampled.url}></img>
-              <div class="card">
-                <div class="group-icons">
-                 ${!isGif ?`<button onClick="addFavoriteGif(${index})" class="option-button"><i id="add-${index}" class="far fa-heart"></i>` : 
-                 `<button onClick="removeFavoriteGif(${index})" class="option-button"><i id="add-${index}" class="far fa-trash-alt"></i>`}
-                  </button>
-                  <button onClick="downLoadGif(${index})" class="option-button download-icon"></button>
-                  <button onClick="maxgif(${index})" class="option-button max-icon"></button>
-                  </div>
-            <div class="group-text">
-            <h4 class="user-name">${element.username}</h4>
-            <h4>${element.title}</h4>
-            </div>
-          </div> 
-        `
+                            <img src=${element.images.fixed_height_downsampled.url}></img>
+                            <div class="card">
+                                <div class="group-icons">
+                                ${!isGif ? `<button onClick="addFavoriteGif(${index})" class="option-button"><i id="add-${index}" class="far fa-heart"></i>` :
+                                    `<button onClick="removeFavoriteGif(${index})" class="option-button"><i id="add-${index}" class="far fa-trash-alt"></i>`}
+                                </button>
+                                <button onClick="downLoadGif(${index})" class="option-button download-icon"></button>
+                                <button onClick="maxgif(${index})" class="option-button max-icon"></button>
+                                </div>
+                            <div class="group-text">
+                            <h4 class="user-name">${element.username}</h4>
+                            <h4>${element.title}</h4>
+                            </div>
+                        </div> 
+                        `
         }
 
     })
@@ -54,13 +54,13 @@ function CardSlider(datagif, elementId) {
     })
 }
 
-function DataCard(data,gif,name) {
+function DataCard(data, gif, name) {
     dataComplete = data;
     isGif = gif
     nameLocal = name
 }
 
-window.addFavoriteGif = function(element) {
+window.addFavoriteGif = function (element) {
     let heart = document.getElementById(`add-${element}`)
     if (heart.className == "far fa-heart") {
         heart.className = "fas fa-heart";
@@ -71,7 +71,7 @@ window.addFavoriteGif = function(element) {
 }
 
 
-window.addSliderFavoriteGif = function(element) {
+window.addSliderFavoriteGif = function (element) {
     let heart = document.getElementById(`add-slider-${element}`)
     if (heart.className == "far fa-heart") {
         heart.className = "fas fa-heart";
@@ -82,19 +82,19 @@ window.addSliderFavoriteGif = function(element) {
 }
 
 
-window.removeFavoriteGif = function(element) {
+window.removeFavoriteGif = function (element) {
     let data = JSON.parse(localStorage.getItem(nameLocal))
     data.splice(element, 1);
-    localStorage.setItem(nameLocal,JSON.stringify(data))
+    localStorage.setItem(nameLocal, JSON.stringify(data))
     location.reload();
 }
 
-window.downLoadGif = async function(element) {
+window.downLoadGif = async function (element) {
     let blob = await fetch(dataComplete[element].images.downsized.url).then(img => img.blob());
     invokeSaveAsDialog(blob, dataComplete[element].slug + ".gif");
 }
 
-window.maxgif = async function(element) {
+window.maxgif = async function (element) {
     let data = dataComplete[element]
     MaxCard(data);
 

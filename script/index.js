@@ -1,7 +1,7 @@
-import datagif from '../mocks/dataGif.js'
+import datagif from '../utils/dataGif.js'
 import Card from './card.js';
 import Slider from './slider.js';
-
+import Data from '../utils/getData.js'
 /*BUSQUEDA*/
 const data = [{
         name: "joy",
@@ -91,33 +91,52 @@ navSearch.addEventListener("keyup", function (e) {
 getTrening();
 
 function getTrening() {
-  const dataTrending = ["big head", "share", "washington wizards", "hide", "whats up"];
-  let trendingTopics = document.querySelector(".trending-content");
-  dataTrending.forEach((element) => {
-    trendingTopics.innerHTML += `<span class="trending-topic">${element}, </span>`
-  })
-  const trendingTopic = document.querySelectorAll(".trending-topic");
-  trendingTopic.forEach(span => span.addEventListener("click", event => {
-    alert(event.currentTarget.textContent)
-  }))
+  Data.getRadom()
+    .then(response => {
+      let trendingTopics = document.querySelector(".trending-content");
+      for (let i = 0; i < 5; i++) {
+        trendingTopics.innerHTML += `<span class="trending-topic">${response.data[i]}, </span>`
+      }
+      const trendingTopic = document.querySelectorAll(".trending-topic");
+      trendingTopic.forEach(span => span.addEventListener("click", event => {
+
+        if (response.data.length > 0) {
+          const buttonView = document.getElementById("more-results");
+          buttonView.style.visibility = 'visible'
+        }
+        getResultSearch(event.currentTarget.textContent)
+      }))
+    });
 }
 
-getResultSearch(datagif);
-
-function getResultSearch(datagif) {
+function getResultSearch(search) {
   let imagesSearch = document.querySelector(".images-search");
-  Card.DataCard(datagif,false)
-  Card.Card(datagif,imagesSearch) 
-}
+  imagesSearch.innerHTML = null
+  Data.getSearch(search, "search", 12, 0)
+    .then(response => {
+      Card.DataCard(response.data, false)
+      Card.Card(response.data, imagesSearch)
+      if (response.data.length > 0) {
+        const buttonView = document.getElementById("more-results");
+        buttonView.style.visibility = 'visible'
+      }
 
-let moreResults = document.getElementById('more-results')
-moreResults.addEventListener('click', searchMoreResults)
+      let moreResults = document.getElementById('more-results')
+      moreResults.addEventListener("click", function(){
+        searchMoreResults(search);
+      })
+    });
+}
 
 let pag = 12;
-function searchMoreResults() {
-  let searchResults = datagif;
-  pag = pag + 12;
-  getResultSearch(searchResults)
+function searchMoreResults(search) {
+  let imagesSearch = document.querySelector(".images-search");
+  Data.getSearch(search, "search", 12,pag)
+    .then(response => {
+      Card.DataCard(response.data, false)
+      Card.Card(response.data, imagesSearch)
+    });
+    pag = pag + 12;
 }
 
 Slider();

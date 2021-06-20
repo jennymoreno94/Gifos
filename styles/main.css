@@ -321,6 +321,7 @@ h1::after {
     font-size: 1rem;
     line-height: 3rem;
     text-transform: uppercase;
+    visibility: hidden;
 }
 
 .button-view:hover {
