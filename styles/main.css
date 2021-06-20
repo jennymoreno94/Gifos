@@ -123,6 +123,12 @@ header {
     background-image: var(--logo-mobile);
     background-repeat: no-repeat;
     margin-left: 24px;
+    cursor: pointer;
+}
+
+.home {
+    width: fit-content;
+    display: flex;
 }
 
 .top-line {

@@ -115,7 +115,6 @@ moreResults.addEventListener('click', searchMoreResults)
 
 let pag = 12;
 function searchMoreResults() {
-  console.log(pag)
   let searchResults = datagif;
   pag = pag + 12;
   getResultSearch(searchResults)
