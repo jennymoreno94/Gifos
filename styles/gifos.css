@@ -1,18 +1,18 @@
-.container-favorites {
+.container-gifos {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
 
-.favorite {
+.gifos {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.favorite-empty {
+.gifos-empty {
     margin-top: 3rem;
     display: flex;
     justify-content: center;
@@ -21,7 +21,7 @@
     visibility: hidden;
 }
 
-.text-favorite {
+.text-gifos {
     margin-top: 1rem;
     color: var(--green-color);
     font-size: 22px;

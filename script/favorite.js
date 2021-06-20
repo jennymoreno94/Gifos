@@ -22,12 +22,10 @@ let pag = 24;
 let pagCurrent = 12
 
 function searchMoreResults() {
-    if (pag <= favorites.length) {
-        let paginatedItems = favorites.slice(pagCurrent, pag)
-        getFavoritesGif(paginatedItems);
-        pagCurrent = pag
-        pag = pag + 12;
-    }
+    let paginatedItems = favorites.slice(pagCurrent, pag)
+    getFavoritesGif(paginatedItems);
+    pagCurrent = pag
+    pag = pag + 12;
 }
 
 function getFavoritesGif(favoritesData) {

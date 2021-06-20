@@ -443,41 +443,7 @@ h1::after {
     .images-search {
         grid-template-columns: repeat(4, 1fr);
     }
-    /*.modal-container img{
-        width: 30%;
-        top: 3rem;
-        right: 5rem;
-    }
-
-    .group-modal {
-        width: 30%;
-    }  */
     .button-view {
         width: 20%;
     }
-    /*.carrousel-button{
-        background: var(--buttonColor);
-        flex: 1;
-        max-width: 5rem;
-        border: 1px solid var(--titleColor);
-        color: var(--titleColor);
-        background: var(--buttonColor);
-        text-align: center;
-        margin: 5rem 1rem;
-        cursor: pointer;
-        font-family: "Montserrat", sans-serif;
-        font-size: 1rem;
-        line-height: 1rem; 
-        padding: 1rem;
-        visibility: visible;
-    }
-    
-    .carrousel-button:hover{
-        background-color: var(--buttonColorHover);
-        color: var(--textButtonHover);
-    }
-
-    .slider-container{
-        overflow:hidden;
-    }*/
 }
