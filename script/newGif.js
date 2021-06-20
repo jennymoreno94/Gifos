@@ -71,8 +71,8 @@ function getStream() {
 
 async function uploadGif(file) {
     createLoadingAnimation();
-    let postGif = await Data.postGif(file);
-    addToLocalStorage('MyGifs', postGif.data.id)
+    //let postGif = await Data.postGif(file);
+    addToLocalStorage('myGifs', postGif.data.id)
     changetoSuccessAnimation();
     getMyGifosData();
 }

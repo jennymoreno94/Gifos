@@ -16,32 +16,8 @@ function Slider() {
       `;
 
     let sliderContainer = document.getElementById("slider_container")
-
-    /*datagif.forEach((element, index) => {
-        sliderContainer.innerHTML += Card.Card(element)
-    });*/
     Card.DataCard(datagif)
-    debugger;
     Card.Card(datagif, sliderContainer)
-
-    /*datagif.forEach((element, index) => {
-      sliderContainer.innerHTML +=
-        ` <div class="image-content">
-            <img src=${element.images.fixed_height_downsampled.url}></img>
-              <div class="card">
-                <div class="group-icons">
-                  <button onClick="addFavoriteGif(${index})" class="option-button"><i id="add-${index}" class="far fa-heart"></i>
-                  </button>
-                  <button onClick="downLoadGif(${index})" class="option-button download-icon"></button>
-                  <button onClick="maxgif(${index})" class="option-button max-icon"></button>
-                  </div>
-            <div class="group-text">
-            <h4 class="user-name">${element.username}</h4>
-            <h4>${element.title}</h4>
-            </div>
-          </div> 
-        `
-    })*/
 }
 
 

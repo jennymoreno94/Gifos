@@ -2,7 +2,7 @@ import Slider from './slider.js'
 import Card from './card.js'
 Slider();
 
-const myGifos = JSON.parse(localStorage.getItem("gifos"))
+const myGifos = JSON.parse(localStorage.getItem("favorites"))
 let containerResult = document.getElementById("container-results");
 let gifosEmpty = document.getElementById("gifos-empty");
 if (myGifos == null) {
