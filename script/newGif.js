@@ -78,7 +78,7 @@ async function uploadGif(file) {
 }
 
 function changetoSuccessAnimation() {
-    document.getElementById('video-loader').src = "./assets/ok.svg";
+    document.getElementById('video-loader').src = "../images/ok.svg";
     document.getElementById('video-loader').classList.remove('video-loader-animation');
     document.getElementById('video-text-loader').textContent = "GIFO subido con éxito";
 }
@@ -92,7 +92,7 @@ function createLoadingAnimation() {
     videoUploadAnimation.style.width = `${widthVideo}px`;
     videoUploadAnimation.id = "video-animation";
     videoUploadAnimation.className = "video video-animation";
-    videoUploadAnimation.innerHTML = `<img id="video-loader" class="video-loader video-loader-animation" src="./assets/loader.svg"> <p id="video-text-loader" class="video-text-loading">Estamos Subiendo tu GIFO </p>`;
+    videoUploadAnimation.innerHTML = `<img id="video-loader" class="video-loader video-loader-animation" src="../images/loader.svg"> <p id="video-text-loader" class="video-text-loading">Estamos Subiendo tu GIFO </p>`;
     let videoContainer = document.getElementById('video-container');
     videoContainer.appendChild(videoUploadAnimation);
 }
