@@ -106,7 +106,7 @@ getResultSearch(datagif);
 
 function getResultSearch(datagif) {
   let imagesSearch = document.querySelector(".images-search");
-  Card.DataCard(datagif)
+  Card.DataCard(datagif,false)
   Card.Card(datagif,imagesSearch) 
 }
 

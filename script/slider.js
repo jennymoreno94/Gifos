@@ -14,10 +14,9 @@ function Slider() {
             <button onClick="toggleRight()" class="carrousel-button"><i class="fa fa-chevron-right"></i></button>
         </div>
       `;
-
     let sliderContainer = document.getElementById("slider_container")
-    Card.DataCard(datagif)
-    Card.Card(datagif, sliderContainer)
+    Card.DataCard(datagif, false)
+    Card.CardSlider(datagif, sliderContainer)
 }
 
 
