@@ -36,6 +36,7 @@ search.addEventListener("input", (e) => {
           search.style.borderBottomLeftRadius = '2em'
           search.value = event.currentTarget.textContent
           let titulo = document.getElementById("tittle-result")
+          titulo.style.visibility = 'visible';
           titulo.textContent = search.value
           getResultSearch(search.value)
 
