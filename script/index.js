@@ -1,4 +1,3 @@
-import datagif from '../utils/dataGif.js'
 import Card from './card.js';
 import Slider from './slider.js';
 import Data from '../utils/getData.js'

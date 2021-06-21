@@ -1,6 +1,7 @@
 import MaxCard from "./maxCard.js";
 
 var dataComplete;
+var dataSliderComplete;
 var isGif;
 var nameLocal;
 
@@ -54,10 +55,11 @@ function CardSlider(datagif, elementId) {
     })
 }
 
-function DataCard(data, gif, name) {
+function DataCard(data,dataSlider,gif, name) {
     dataComplete = data;
     isGif = gif;
     nameLocal = name;
+    dataSliderComplete = dataSlider;
 }
 
 window.addFavoriteGif = function (element) {
@@ -78,7 +80,7 @@ window.addSliderFavoriteGif = function (element) {
     } else {
         heart.className = "far fa-heart";
     }
-    addLocalStorage("favorites", dataComplete[element])
+    addLocalStorage("favorites", dataSliderComplete[element])
 }
 
 
@@ -97,7 +99,6 @@ window.downLoadGif = async function (element) {
 window.maxgif = async function (element) {
     let data = dataComplete[element]
     MaxCard(data);
-
 }
 
 function addLocalStorage(name, gif) {

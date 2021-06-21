@@ -1,3 +1,6 @@
+import DataPost from '../utils/postData.js'
+import DataGet from '../utils/getData.js'
+
 let start = document.getElementById('start');
 start.addEventListener('click', getStream);
 let repeat = document.getElementById('time-capture');
@@ -71,10 +74,12 @@ function getStream() {
 
 async function uploadGif(file) {
     createLoadingAnimation();
-    //let postGif = await Data.postGif(file);
-    addToLocalStorage('myGifs', postGif.data.id)
-    changetoSuccessAnimation();
-    getMyGifosData();
+    await DataPost.postGif(file)
+    .then(response => {
+        addToLocalStorage('myGifs', response.data.id)
+        changetoSuccessAnimation();
+        getMyGifosData();
+    });
 }
 
 function changetoSuccessAnimation() {
@@ -106,15 +111,17 @@ function addToLocalStorage(name, value) {
 
 function getMyGifosData() {
     let dataGif = [];
-    const data = JSON.parse(localStorage.getItem('MyGifs'));
+    const data = JSON.parse(localStorage.getItem('myGifs'));
     if (data) {
         data.map(async function(id) {
-            let gifid = await DataPost.getGifById(id);
-            dataGif.push(gifid.data);
-            localStorage.setItem('MyGifData', JSON.stringify(dataGif))
+            DataGet.getGifById(id)
+            .then(response => {
+                dataGif.push(response.data);
+                localStorage.setItem('myGifData', JSON.stringify(dataGif))
+            });
+           
         });
     }
-
 }
 
 function fiveStep() {

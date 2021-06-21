@@ -1,6 +1,6 @@
 import Slider from './slider.js'
 import Card from './card.js'
-Slider('favorites');
+
 
 const favorites = JSON.parse(localStorage.getItem("favorites"))
 let containerResult = document.getElementById("container-results");
@@ -33,3 +33,6 @@ function getFavoritesGif(favoritesData) {
     Card.Card(favoritesData, imagesSearch)
     favoriteEmpty.style.display = 'none';
 }
+
+
+Slider('favorites',favorites);

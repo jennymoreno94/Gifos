@@ -1,8 +1,7 @@
 import Slider from './slider.js'
 import Card from './card.js'
-Slider('myGifs');
 
-const myGifos = JSON.parse(localStorage.getItem("myGifs"))
+const myGifos = JSON.parse(localStorage.getItem("myGifData"))
 let containerResult = document.getElementById("container-results");
 let gifosEmpty = document.getElementById("gifos-empty");
 if (myGifos == null || myGifos.length === 0) {
@@ -29,7 +28,9 @@ function searchMoreResults() {
 
 function getMyGifs(gifosData) {
     let imagesSearch = document.querySelector(".images-search");
-    Card.DataCard(gifosData, true, 'myGifs')
+    Card.DataCard(gifosData,null, true, 'myGifData')
     Card.Card(gifosData, imagesSearch)
     gifosEmpty.style.display = 'none';
 }
+
+Slider('myGifData',myGifos);
