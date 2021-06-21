@@ -1,10 +1,14 @@
 import DataPost from '../utils/postData.js'
 import DataGet from '../utils/getData.js'
 
+
+let form = new FormData();
+let recorder
 let start = document.getElementById('start');
 start.addEventListener('click', getStream);
 let repeat = document.getElementById('time-capture');
-repeat.addEventListener('click', function() {
+repeat.addEventListener('click', function () {
+    recorder.clearRecordedData();
     document.getElementById('upload').style.display = 'none';
     document.getElementById('step3').classList.remove('step--active')
     getStream();
@@ -23,63 +27,64 @@ function getStream() {
     videoContainer.innerHTML = giveAccesToCamara;
     videoContainer.appendChild(video);
     navigator.mediaDevices.getUserMedia({
-            audio: false,
-            video: {
-                height: { max: 300 }
-            }
-        })
-        .then(async function(stream) {
+        audio: false,
+        video: {
+            height: { max: 300 }
+        }
+    })
+        .then(function (stream) {
             video.srcObject = stream;
-            video.play();
+            video.onloadedmetadata = function (e) {
+                video.play();
+            };
+            //video.play();
             secondStep();
-            const recorder = RecordRTC(stream, {
+            recorder = RecordRTC(stream, {
                 type: 'gif',
                 frameRate: 1,
                 quality: 10,
                 width: 360,
-                hidden: 240,
-                onGifRecordingStarted: function() {
-                    console.log('started')
-                },
+                hidden: 240
             })
+
             let record = document.getElementById('record');
-            record.addEventListener('click', function() {
+            record.addEventListener('click', function () {
                 video.play();
                 recorder.startRecording();
                 thridStep();
-                timer(true)
+                timer(recorder)
             })
             let finish = document.getElementById('finish');
             let blob
-            finish.addEventListener('click', function() {
-                recorder.stopRecording(function() {
+            finish.addEventListener('click', function () {
+                recorder.stopRecording(function () {
                     blob = recorder.getBlob();
+                    form.append('file', blob, 'myGif.gif');
                 });
                 video.pause();
                 fourStep();
                 timer(false);
             })
-            let upload = document.getElementById('upload');
-            upload.addEventListener('click', async function() {
-                fiveStep();
-                let form = new FormData();
-                form.append('file', blob, 'myGif.gif');
-                console.log(form.get('file'))
-                uploadGif(form);
 
-            })
 
         })
 }
 
-async function uploadGif(file) {
+let upload = document.getElementById('upload');
+upload.addEventListener('click', function () {
+    fiveStep();
+    uploadGif(form);
+
+})
+
+function uploadGif(file) {
     createLoadingAnimation();
-    await DataPost.postGif(file)
-    .then(response => {
-        addToLocalStorage('myGifs', response.data.id)
-        changetoSuccessAnimation();
-        getMyGifosData();
-    });
+    DataPost.postGif(file)
+        .then(response => {
+            addToLocalStorage('myGifs', response.data.id)
+            changetoSuccessAnimation();
+            getMyGifosData();
+        });
 }
 
 function changetoSuccessAnimation() {
@@ -113,13 +118,13 @@ function getMyGifosData() {
     let dataGif = [];
     const data = JSON.parse(localStorage.getItem('myGifs'));
     if (data) {
-        data.map(async function(id) {
+        data.map(function (id) {
             DataGet.getGifById(id)
-            .then(response => {
-                dataGif.push(response.data);
-                localStorage.setItem('myGifData', JSON.stringify(dataGif))
-            });
-           
+                .then(response => {
+                    dataGif.push(response.data);
+                    localStorage.setItem('myGifData', JSON.stringify(dataGif))
+                });
+
         });
     }
 }
@@ -181,3 +186,4 @@ function timer(recorder) {
         setTimeout(looper, 1000);
     })();
 }
+
