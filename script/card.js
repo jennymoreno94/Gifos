@@ -56,8 +56,8 @@ function CardSlider(datagif, elementId) {
 
 function DataCard(data, gif, name) {
     dataComplete = data;
-    isGif = gif
-    nameLocal = name
+    isGif = gif;
+    nameLocal = name;
 }
 
 window.addFavoriteGif = function (element) {

@@ -36,6 +36,8 @@ search.addEventListener("input", (e) => {
           search.style.borderBottomRightRadius = '2em'
           search.style.borderBottomLeftRadius = '2em'
           search.value = event.currentTarget.textContent
+          let titulo = document.getElementById("tittle-result")
+          titulo.textContent = search.value
           getResultSearch(search.value)
 
         }))
@@ -64,8 +66,9 @@ document.addEventListener("scroll", () => {
 
 navSearch.addEventListener("keyup", function (e) {
   if (e.key === 'Enter') {
-    debugger;
     if (e.target.value) {
+      let titulo = document.getElementById("tittle-result")
+      titulo.textContent = e.target.value
       getResultSearch(e.target.value)
     }
   }
@@ -83,10 +86,11 @@ function getTrening() {
       }
       const trendingTopic = document.querySelectorAll(".trending-topic");
       trendingTopic.forEach(span => span.addEventListener("click", event => {
-
         if (response.data.length > 0) {
           const buttonView = document.getElementById("more-results");
           buttonView.style.visibility = 'visible'
+          search = document.getElementById('search')
+          search.value = event.currentTarget.textContent.replace(',', '')
         }
         getResultSearch(event.currentTarget.textContent)
       }))

@@ -2,7 +2,7 @@ import datagif from '../utils/dataGif.js'
 import Card from './card.js';
 import Data from '../utils/getData.js'
 
-function Slider() {
+function Slider(nameLocal) {
     let carruselContainer = document.getElementById("carrusel-container")
     carruselContainer.innerHTML += `
         <h2 class="trending-title">Trending GIFOS</h2>
@@ -19,8 +19,7 @@ function Slider() {
     let sliderContainer = document.getElementById("slider_container")
     Data.getTrending('trending',12)
     .then(response => {
-        debugger;
-        Card.DataCard(response.data, false)
+        Card.DataCard(response.data,false,nameLocal)
         Card.CardSlider(response.data, sliderContainer)
     });
 }

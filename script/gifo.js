@@ -1,6 +1,6 @@
 import Slider from './slider.js'
 import Card from './card.js'
-Slider();
+Slider('myGifs');
 
 const myGifos = JSON.parse(localStorage.getItem("myGifs"))
 let containerResult = document.getElementById("container-results");

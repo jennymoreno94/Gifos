@@ -1,6 +1,6 @@
 import Slider from './slider.js'
 import Card from './card.js'
-Slider();
+Slider('favorites');
 
 const favorites = JSON.parse(localStorage.getItem("favorites"))
 let containerResult = document.getElementById("container-results");
