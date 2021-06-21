@@ -11,7 +11,7 @@ search.addEventListener("input", (e) => {
       .then(response => {
         let FilterData = [];
         if (response.data.length > 0) {
-          FilterData = response.data.filter((da) => da.name.includes(e.target.value));
+          FilterData = response.data.filter((da) => da.name.includes(e.target.value.toLowerCase()));
           const searchAutocomplete =
             `<ul class="list">
               ${FilterData.map(item => `
