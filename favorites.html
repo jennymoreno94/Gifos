@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="styles/card.css" />
     <link rel="stylesheet" href="styles/maxCard.css" />
     <link rel="stylesheet" href="styles/slider.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/gifos.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -24,7 +26,8 @@
                 <span class="menu_on_span"></span>
                 <span class="menu_on_span"></span>
             </a>
-            <input type="search" id="nav-search" class="nav-search" placeholder="Busca GIFOS y más" required autocomplete="off" />
+            <input type="search" id="nav-search" class="nav-search" placeholder="Busca GIFOS y más" required
+                autocomplete="off" />
             <nav>
                 <div id="menu">
                     <ul>
@@ -55,24 +58,24 @@
     <main>
         <section>
             <div class="container">
-                <div class="imagen">
-                    <h1>Inspírate, busca, guarda, y crea los mejores</h1>
-                    <img id="welcome" src="images/ilustra_header.svg" alt="ImageWelcome" />
-                </div>
-                <input type="search" id="search" placeholder="Busca GIFOS y más" required autocomplete="off" />
-                <div id="suggestions-list">
-                </div>
-                <div class="trending">
-                    <h2>Trending</h2>
-                    <p class="trending-content">
-                    </p>
-                </div>
-                <div class="container-results">
-                    <h2 id="tittle-result"></h2>
-                    <div id="images-search" class="images-search">
+
+                <div class="container-gifos">
+                    <div class="gifos">
+                        <img src="./images/icon-favoritos.svg" alt="favorites">
+                        <h2>Favoritos</h2>
                     </div>
-                    <button id="more-results" class="button-view">Ver Mas</button>
+                    <div class="gifos-empty" id="gifos-empty">
+                        <img src="./images/icon-mis-gifos-sin-contenido.svg" alt="favorites empty">
+                        <h4 class="text-gifos">¡Guardá tu primer GIFO en favoritos para que se muestre aquí!</h4>
+                    </div>
+                    <div class="container-results" id="container-results">
+                        <div id="images-search" class="images-search">
+                        </div>
+                        <button id="more-results" class="button-view">Ver Mas</button>
+                    </div>
                 </div>
+
+
                 <div id="carrusel-container" class="carrusel-container">
                 </div>
             </div>
@@ -92,7 +95,7 @@
         </div>
      </footer>
     <script type="module" src="./script/menu.js"></script>
-    <script type="module" src="script/index.js"></script>
+    <script type="module" src="script/favorite.js"></script>
     <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
 </body>
 

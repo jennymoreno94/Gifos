@@ -1,0 +1,82 @@
+.image-content {
+    display: inline-block;
+    position: relative;
+    width: 80%;
+    animation-duration: 2s;
+    animation-name: fade;
+    position: relative;
+}
+
+.image-content img {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.card:hover {
+    background: rgb(87, 46, 229, 0.6);
+    opacity: 1;
+}
+
+.group-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.2rem;
+    margin: 0.5rem;
+}
+
+.option-button {
+    background-position: center;
+    background-color: white;
+    border-radius: 0.3rem;
+    width: 30px;
+    height: 30px;
+    border: none;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.option-button:hover {
+    opacity: 1;
+}
+
+.max-icon {
+    background: url("../images/icon-max-normal.svg") no-repeat;
+}
+
+.close-icon {
+    background: var(--close-icon) no-repeat;
+}
+
+.far {
+    color: #572EE5;
+    font-size: 20px;
+}
+
+.fas {
+    color: #572EE5;
+    font-size: 20px;
+}
+
+.download-icon {
+    background: url("../images/icon-download.svg") no-repeat;
+}
+
+.group-text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: left;
+    left: 15px;
+    bottom: 20px;
+}
