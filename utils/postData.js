@@ -8,7 +8,6 @@ const postGif = (file) => {
             body: file
         })
         .then(response => {
-            debugger;
             resolve(response.json())
             })
         .catch(error => {

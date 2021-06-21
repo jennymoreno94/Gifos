@@ -127,6 +127,7 @@
     max-width: 500px;
     width: 100%;
     transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
 .new-gifos-welcome-message .main-title {
@@ -148,6 +149,7 @@
 
 .flex-2 {
     flex: 2;
+    /*z-index: -2*/
 }
 
 .movie {
