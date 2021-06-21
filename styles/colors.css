@@ -25,6 +25,7 @@
     --textButtonHover: #ffffff;
     --gifos-background: #ffffff;
     --green-gifos: #50E3C2;
+    --colorText: #bbc8d6;
 }
 
 :root[data-theme="dark"] {
@@ -55,4 +56,5 @@
     --textButtonHover: #000000;
     --gifos-background: #37383C;
     --green-gifos: #50E3C2;
+    --colorText: #ffffff;
 }

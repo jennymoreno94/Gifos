@@ -261,7 +261,7 @@ h1::after {
 }
 
 .option-list {
-    color: var(--color);
+    color: var(--colorText);
     margin-left: 1rem;
     margin-top: 1rem;
 }

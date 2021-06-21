@@ -1,5 +1,6 @@
 import datagif from '../utils/dataGif.js'
 import Card from './card.js';
+import Data from '../utils/getData.js'
 
 function Slider() {
     let carruselContainer = document.getElementById("carrusel-container")
@@ -14,9 +15,14 @@ function Slider() {
             <button onClick="toggleRight()" class="carrousel-button"><i class="fa fa-chevron-right"></i></button>
         </div>
       `;
+
     let sliderContainer = document.getElementById("slider_container")
-    Card.DataCard(datagif, false)
-    Card.CardSlider(datagif, sliderContainer)
+    Data.getTrending('trending',12)
+    .then(response => {
+        debugger;
+        Card.DataCard(response.data, false)
+        Card.CardSlider(response.data, sliderContainer)
+    });
 }
 
 

@@ -38,8 +38,21 @@ const getAutocomplete = (tag) => {
     })
 }
 
+const getTrending = (endPoint, limit ) => {
+    let url = `${api}/${endPoint}?api_key=${apikey}&limit=${limit}&rating=g`;
+    return new Promise((resolve, reject) => {
+        fetch(url)
+            .then(response => resolve(response.json()))
+            .catch(error => {
+                console.log(`Error petición ${url.getUser}:` + error.message);
+                reject(error)
+            })
+    })
+}
+
 export default {
     getSearch,
     getRadom,
-    getAutocomplete
+    getAutocomplete,
+    getTrending
 }
