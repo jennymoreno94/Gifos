@@ -42,7 +42,7 @@ function CardSlider(datagif, elementId) {
                   <button onClick="addSliderFavoriteGif(${index})" class="option-button"><i id="add-slider-${index}" class="far fa-heart"></i>
                   </button>
                   <button onClick="downLoadGif(${index})" class="option-button download-icon"></button>
-                  <button onClick="maxgif(${index})" class="option-button max-icon"></button>
+                  <button onClick="maxgifSlider(${index})" class="option-button max-icon"></button>
                   </div>
             <div class="group-text">
             <h4 class="user-name">${element.username}</h4>
@@ -98,6 +98,11 @@ window.downLoadGif = async function (element) {
 
 window.maxgif = async function (element) {
     let data = dataComplete[element]
+    MaxCard(data);
+}
+
+window.maxgifSlider = async function (element) {
+    let data = dataSliderComplete[element]
     MaxCard(data);
 }
 
