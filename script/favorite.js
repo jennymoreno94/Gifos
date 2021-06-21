@@ -9,6 +9,8 @@ if (favorites == null || favorites.length === 0) {
     favoriteEmpty.style.visibility = 'visible'
     containerResult.style.visibility = 'hidden'
 } else {
+    const buttonView = document.getElementById("more-results");
+    buttonView.style.visibility = 'visible'
     let favoritesData = favorites.slice(0, 12)
     getFavoritesGif(favoritesData)
 }

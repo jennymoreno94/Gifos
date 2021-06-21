@@ -8,6 +8,8 @@ if (myGifos == null || myGifos.length === 0) {
     gifosEmpty.style.visibility = 'visible'
     containerResult.style.visibility = 'hidden'
 } else {
+    const buttonView = document.getElementById("more-results");
+    buttonView.style.visibility = 'visible'
     let gifosData = myGifos.slice(0, 12)
     getMyGifs(gifosData)
 }

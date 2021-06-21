@@ -333,6 +333,42 @@ h1::after {
     text-align: center;
 }
 
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: var(--text);
+    border-bottom: 5px solid var(--border-gifos);
+}
+
+.share-gifos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    padding: 20px;
+}
+.share-gifos > span {
+    margin: auto;
+}
+
+.social-media-list {
+    display: flex;
+    justify-content: center;
+    padding: 20px 40px;
+}
+.social-media-list > li {
+    list-style: none;
+    padding: 10px;
+    color: var(--icons-color);
+    font-size: 20px;
+}
+.rights-reserved {
+    margin-bottom: 10px;
+}
+
 @media screen and (min-width: 1220px) {
     #menu a.title-mobile {
         display: none;
@@ -446,5 +482,14 @@ h1::after {
     }
     .button-view {
         width: 20%;
+    }
+
+    .footer {
+        flex-direction: row;
+        justify-content: space-around;
+        max-height: 80px;
+    }
+    .share-gifos {
+        flex-direction: row;
     }
 }
