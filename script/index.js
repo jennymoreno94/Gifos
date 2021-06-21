@@ -103,7 +103,7 @@ function getResultSearch(search) {
     .then(response => {
       Card.DataCard(response.data, false)
       Card.Card(response.data, imagesSearch)
-      Slider();
+      Slider(null,response.data);
       if (response.data.length > 0) {
         const buttonView = document.getElementById("more-results");
         buttonView.style.visibility = 'visible'
@@ -123,7 +123,7 @@ function searchMoreResults(search) {
     .then(response => {
       Card.DataCard(response.data, false)
       Card.Card(response.data, imagesSearch)
-      Slider();
+      Slider(null,response.data);
     });
   pag = pag + 12;
 }
