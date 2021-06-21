@@ -127,8 +127,9 @@ header {
 }
 
 .home {
-    width: fit-content;
     display: flex;
+    width: 80%;
+    margin: 0.5rem;
 }
 
 .top-line {
@@ -376,6 +377,11 @@ h1::after {
     #menu a.title-desk {
         display: block;
     }
+    .home {
+        width: fit-content;
+        margin: 0rem;
+    }
+
     .logo {
         width: 75px;
         height: auto;
