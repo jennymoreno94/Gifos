@@ -11,7 +11,7 @@ search.addEventListener("input", (e) => {
       .then(response => {
         let FilterData = [];
         if (response.data.length > 0) {
-          FilterData = response.data.filter((da) => da.name.includes(e.target.value));
+          FilterData = response.data.filter((da) => da.name.includes(e.target.value.toLowerCase()));
           const searchAutocomplete =
             `<ul class="list">
               ${FilterData.map(item => `
@@ -36,6 +36,7 @@ search.addEventListener("input", (e) => {
           search.style.borderBottomLeftRadius = '2em'
           search.value = event.currentTarget.textContent
           let titulo = document.getElementById("tittle-result")
+          titulo.style.visibility = 'visible';
           titulo.textContent = search.value
           getResultSearch(search.value)
 
@@ -103,7 +104,7 @@ function getResultSearch(search) {
     .then(response => {
       Card.DataCard(response.data, false)
       Card.Card(response.data, imagesSearch)
-      Slider();
+      Slider(null,response.data);
       if (response.data.length > 0) {
         const buttonView = document.getElementById("more-results");
         buttonView.style.visibility = 'visible'
@@ -123,7 +124,7 @@ function searchMoreResults(search) {
     .then(response => {
       Card.DataCard(response.data, false)
       Card.Card(response.data, imagesSearch)
-      Slider();
+      Slider(null,response.data);
     });
   pag = pag + 12;
 }

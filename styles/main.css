@@ -252,6 +252,10 @@ h1::after {
     background-image: none;
 }
 
+#tittle-result {
+    visibility: hidden;
+}
+
 .list {
     background-position: 95% 60%;
     border: 1px solid var(--borderSearch);
