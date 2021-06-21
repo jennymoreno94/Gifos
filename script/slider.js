@@ -3,6 +3,7 @@ import Data from '../utils/getData.js'
 
 function Slider(nameLocal,data) {
     let carruselContainer = document.getElementById("carrusel-container")
+    carruselContainer.innerHTML = null;
     carruselContainer.innerHTML += `
         <h2 class="trending-title">Trending GIFOS</h2>
         <p class="trending-description">Mira los últimos </p>

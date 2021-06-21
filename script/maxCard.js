@@ -33,7 +33,6 @@ window.addFavoriteModalGif = function(element) {
         heartmodal.className = "far fa-heart";
     }
     addLocalStorage("favorites", element);
-    //transversal.localStorage("favorites", element)
 }
 
 window.closegif = async function(id) {
