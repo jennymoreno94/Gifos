@@ -72,7 +72,6 @@ document.addEventListener("scroll", () => {
 navSearch.addEventListener("keyup", function (e) {
   if (e.key === 'Enter') {
     if (e.target.value) {
-      debugger;
       let titulo = document.getElementById("tittle-result")
       titulo.style.visibility = 'visible';
       titulo.textContent = e.target.value
@@ -139,7 +138,6 @@ function searchMoreResults(search) {
 function onKeyUp(e) {
   var keycode = e.keyCode;
   if (keycode == '13') {
-    debugger;
     search = document.getElementById('search')
     search.type = "text"
     search.style.backgroundImage = "url('../images/icon-search.svg')"
