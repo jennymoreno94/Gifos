@@ -1,7 +1,6 @@
 import Card from './card.js';
 import Slider from './slider.js';
 import Data from '../utils/getData.js'
-
 /*BUSQUEDA*/
 let search = document.getElementById("search");
 search.addEventListener("input", (e) => {
@@ -47,7 +46,10 @@ search.addEventListener("input", (e) => {
         }))
       });
   } else {
-    search.style.backgroundImage = "url('../images/icon-search.svg')"
+   
+    search.style.backgroundImage = "url('./images/icon-search.svg')"
+    //search.style.setProperty('backgroundImage','var(--logo-background-image);');
+
     search.style.borderBottomRightRadius = '2em'
     search.style.borderBottomLeftRadius = '2em'
     suggestionsList.innerHTML = ''
@@ -140,7 +142,9 @@ function onKeyUp(e) {
   if (keycode == '13') {
     search = document.getElementById('search')
     search.type = "text"
-    search.style.backgroundImage = "url('../images/icon-search.svg')"
+    //search.style.backgroundImage = `${img}`
+    search.style.backgroundImage = "url('./images/icon-search.svg')"
+    //search.style.setProperty('backgroundImage','var(--logo-background-image);');
     let suggestionsList = document.getElementById("suggestions-list")
     suggestionsList.style.visibility = "hidden";
     search.style.borderBottomRightRadius = '2em'
