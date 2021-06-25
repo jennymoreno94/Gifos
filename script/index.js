@@ -142,9 +142,7 @@ function onKeyUp(e) {
   if (keycode == '13') {
     search = document.getElementById('search')
     search.type = "text"
-    //search.style.backgroundImage = `${img}`
     search.style.backgroundImage = "url('./images/icon-search.svg')"
-    //search.style.setProperty('backgroundImage','var(--logo-background-image);');
     let suggestionsList = document.getElementById("suggestions-list")
     suggestionsList.style.visibility = "hidden";
     search.style.borderBottomRightRadius = '2em'
