@@ -47,9 +47,7 @@ search.addEventListener("input", (e) => {
       });
   } else {
    
-    search.style.backgroundImage = "url('./images/icon-search.svg')"
-    //search.style.setProperty('backgroundImage','var(--logo-background-image);');
-
+    search.style.backgroundImage = "url('../../images/icon-search.svg')"
     search.style.borderBottomRightRadius = '2em'
     search.style.borderBottomLeftRadius = '2em'
     suggestionsList.innerHTML = ''
@@ -142,7 +140,7 @@ function onKeyUp(e) {
   if (keycode == '13') {
     search = document.getElementById('search')
     search.type = "text"
-    search.style.backgroundImage = "url('./images/icon-search.svg')"
+    search.style.backgroundImage = "url('../../images/icon-search.svg')"
     let suggestionsList = document.getElementById("suggestions-list")
     suggestionsList.style.visibility = "hidden";
     search.style.borderBottomRightRadius = '2em'
