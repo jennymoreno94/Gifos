@@ -138,7 +138,6 @@ function searchMoreResults(search) {
 function onKeyUp(e) {
   var keycode = e.keyCode;
   if (keycode == '13') {
-    debugger;
     search = document.getElementById('search')
     search.type = "text"
     search.style.backgroundImage = "url('images/icon-search.svg')"
