@@ -235,8 +235,14 @@ h1::after {
     width: 20px;
     border-radius: 10px;
     content: var(--logo-close-search);
-    cursor: pointer
+    cursor: pointer;
+    visibility: visible
 }
+
+/*.search-active::-webkit-search-cancel-button {
+    visibility: hidden;
+}*/
+
 
 #search:active {
     outline: none;

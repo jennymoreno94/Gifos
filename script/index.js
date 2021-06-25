@@ -20,6 +20,9 @@ search.addEventListener("input", (e) => {
           </ul>`;
 
           if (FilterData.length !== 0) {
+            search.style.backgroundImage = 'none' 
+            search.type = "search"
+            suggestionsList.style.visibility = "visible";
             suggestionsList.innerHTML = searchAutocomplete
             search.style.borderBottomRightRadius = '0em'
             search.style.borderBottomLeftRadius = '0em'
@@ -43,6 +46,7 @@ search.addEventListener("input", (e) => {
         }))
       });
   } else {
+    search.style.backgroundImage = "url('../images/icon-search.svg')" 
     search.style.borderBottomRightRadius = '2em'
     search.style.borderBottomLeftRadius = '2em'
     suggestionsList.innerHTML = ''
@@ -67,7 +71,9 @@ document.addEventListener("scroll", () => {
 navSearch.addEventListener("keyup", function (e) {
   if (e.key === 'Enter') {
     if (e.target.value) {
+      debugger;
       let titulo = document.getElementById("tittle-result")
+      titulo.style.visibility = 'visible';
       titulo.textContent = e.target.value
       getResultSearch(e.target.value)
     }
@@ -104,7 +110,7 @@ function getResultSearch(search) {
     .then(response => {
       Card.DataCard(response.data, false)
       Card.Card(response.data, imagesSearch)
-      Slider(null,response.data);
+      Slider(null, response.data);
       if (response.data.length > 0) {
         const buttonView = document.getElementById("more-results");
         buttonView.style.visibility = 'visible'
@@ -124,9 +130,30 @@ function searchMoreResults(search) {
     .then(response => {
       Card.DataCard(response.data, false)
       Card.Card(response.data, imagesSearch)
-      Slider(null,response.data);
+      Slider(null, response.data);
     });
   pag = pag + 12;
 }
+
+function onKeyUp(e) {
+  var keycode = e.keyCode;
+  if (keycode == '13') {
+    debugger;
+    search = document.getElementById('search')
+    search.type = "text"
+    search.style.backgroundImage = "url('../images/icon-search.svg')" 
+    let suggestionsList = document.getElementById("suggestions-list")
+    suggestionsList.style.visibility = "hidden";
+    search.style.borderBottomRightRadius = '2em'
+    search.style.borderBottomLeftRadius = '2em'
+    suggestionsList.innerHTML = ''
+    let titulo = document.getElementById("tittle-result")
+    titulo.style.visibility = 'visible';
+    titulo.textContent = e.target.value
+    getResultSearch(e.target.value)
+  }
+}
+
+window.onKeyUp = onKeyUp;
 
 Slider();
