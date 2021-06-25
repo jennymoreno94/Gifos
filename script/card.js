@@ -41,7 +41,7 @@ function CardSlider(datagif, elementId) {
                 <div class="group-icons">
                   <button onClick="addSliderFavoriteGif(${index})" class="option-button"><i id="add-slider-${index}" class="far fa-heart"></i>
                   </button>
-                  <button onClick="downLoadGif(${index})" class="option-button download-icon"></button>
+                  <button onClick="downLoadSliderGif(${index})" class="option-button download-icon"></button>
                   <button onClick="maxgifSlider(${index})" class="option-button max-icon"></button>
                   </div>
             <div class="group-text">
@@ -94,6 +94,11 @@ window.removeFavoriteGif = function (element) {
 window.downLoadGif = async function (element) {
     let blob = await fetch(dataComplete[element].images.downsized.url).then(img => img.blob());
     invokeSaveAsDialog(blob, dataComplete[element].slug + ".gif");
+}
+
+window.downLoadSliderGif = async function (element) {
+    let blob = await fetch(dataSliderComplete[element].images.downsized.url).then(img => img.blob());
+    invokeSaveAsDialog(blob, dataSliderComplete[element].slug + ".gif");
 }
 
 window.maxgif = async function (element) {

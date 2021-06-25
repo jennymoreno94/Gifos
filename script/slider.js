@@ -15,7 +15,7 @@ function Slider(nameLocal,data) {
             <button onClick="toggleRight()" class="carrousel-button"><i class="fa fa-chevron-right"></i></button>
         </div>
       `;
-
+      
     let sliderContainer = document.getElementById("slider_container")
     Data.getTrending('trending',12)
     .then(response => {
