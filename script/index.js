@@ -7,6 +7,9 @@ let search = document.getElementById("search");
 search.addEventListener("input", (e) => {
   const suggestionsList = document.getElementById(`suggestions-list`);
   if (e.target.value) {
+    search.style.backgroundImage = 'none'
+    search.type = "search"
+    suggestionsList.style.visibility = "visible";
     Data.getAutocomplete(e.target.value)
       .then(response => {
         let FilterData = [];
@@ -20,9 +23,7 @@ search.addEventListener("input", (e) => {
           </ul>`;
 
           if (FilterData.length !== 0) {
-            search.style.backgroundImage = 'none' 
-            search.type = "search"
-            suggestionsList.style.visibility = "visible";
+
             suggestionsList.innerHTML = searchAutocomplete
             search.style.borderBottomRightRadius = '0em'
             search.style.borderBottomLeftRadius = '0em'
@@ -46,7 +47,7 @@ search.addEventListener("input", (e) => {
         }))
       });
   } else {
-    search.style.backgroundImage = "url('../images/icon-search.svg')" 
+    search.style.backgroundImage = "url('../images/icon-search.svg')"
     search.style.borderBottomRightRadius = '2em'
     search.style.borderBottomLeftRadius = '2em'
     suggestionsList.innerHTML = ''
@@ -141,7 +142,7 @@ function onKeyUp(e) {
     debugger;
     search = document.getElementById('search')
     search.type = "text"
-    search.style.backgroundImage = "url('../images/icon-search.svg')" 
+    search.style.backgroundImage = "url('../images/icon-search.svg')"
     let suggestionsList = document.getElementById("suggestions-list")
     suggestionsList.style.visibility = "hidden";
     search.style.borderBottomRightRadius = '2em'
